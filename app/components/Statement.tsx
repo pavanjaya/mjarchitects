@@ -1,10 +1,19 @@
 import Reveal from "./Reveal";
+import PillCTA from "./PillCTA";
 import TextReveal from "./motion/TextReveal";
 
 export default function Statement() {
   return (
-    <section className="py-32 md:py-40 px-6 md:px-12" style={{ background: "var(--background)" }}>
+    <section id="philosophy" className="py-32 md:py-40 px-6 md:px-12" style={{ background: "var(--background)" }}>
       <div className="max-w-[1600px] mx-auto text-center">
+        <Reveal>
+          <p
+            className="text-[12px] uppercase mb-10"
+            style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
+          >
+            (Our Philosophy)
+          </p>
+        </Reveal>
         <h2
           className="font-display uppercase mb-16 md:mb-20"
           style={{
@@ -34,6 +43,12 @@ export default function Statement() {
               Sensibility gives it depth — light, material, texture, scale,
               and human experience.
             </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.15}>
+          <div className="flex justify-center pt-16 md:pt-20">
+            <PillCTA href="/philosophy">Explore Our Philosophy</PillCTA>
           </div>
         </Reveal>
       </div>
