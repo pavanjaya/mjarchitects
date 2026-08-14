@@ -29,12 +29,14 @@ export default function Statement() {
 
         <Reveal delay={0.1}>
           <p
-            className="text-sm leading-relaxed max-w-2xl mx-auto"
+            className="text-base leading-relaxed max-w-2xl mx-auto"
             style={{ color: "var(--muted)" }}
           >
-            Sense gives architecture its order — logic, geometry, proportion,
-            structure, and clarity. Sensibility gives it depth — light,
-            material, texture, scale, and human experience.
+            Sense gives architecture its order. Sensibility gives it depth.
+            Space gives it life. At MJ Architects, we see every project as an
+            opportunity to bring these three together — to transform ideas,
+            conditions, and possibilities into spaces that are meaningful to
+            the people who inhabit them.
           </p>
         </Reveal>
 
