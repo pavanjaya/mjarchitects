@@ -102,6 +102,13 @@ export default function Footer() {
           >
             © 2026 MJ Architects. All rights reserved.
           </p>
+
+          <p
+            className="text-[12px]"
+            style={{ color: "rgba(255,255,255,0.5)" }}
+          >
+            Made by Hueness
+          </p>
         </div>
       </div>
     </footer>
