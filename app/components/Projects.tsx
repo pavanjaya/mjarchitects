@@ -18,7 +18,7 @@ export default function Projects({ featured = false }: { featured?: boolean }) {
       : projects.filter((p) => p.category === activeCategory);
 
   return (
-    <section id="work" className="pt-32 pb-24 px-6 md:px-12">
+    <section id="work" className="pt-20 pb-24 px-6 md:px-12">
       <div className="max-w-[1600px] mx-auto">
         {/* Header */}
         <Reveal>

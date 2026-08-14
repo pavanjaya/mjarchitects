@@ -4,7 +4,7 @@ import TextReveal from "./motion/TextReveal";
 
 export default function Statement() {
   return (
-    <section id="philosophy" className="py-32 md:py-40 px-6 md:px-12" style={{ background: "var(--background)" }}>
+    <section id="philosophy" className="pt-32 md:pt-40 pb-16 md:pb-20 px-6 md:px-12" style={{ background: "var(--background)" }}>
       <div className="max-w-[1600px] mx-auto text-center">
         <Reveal>
           <p
@@ -41,7 +41,7 @@ export default function Statement() {
         </Reveal>
 
         <Reveal delay={0.15}>
-          <div className="flex justify-center pt-16 md:pt-20">
+          <div className="flex justify-center pt-10 md:pt-12">
             <PillCTA href="/philosophy">Explore Our Philosophy</PillCTA>
           </div>
         </Reveal>
