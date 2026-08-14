@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <footer
       className="pt-20 pb-8 px-6 md:px-12"
-      style={{ background: "var(--foreground)" }}
+      style={{ background: "#B5533A" }}
     >
       <div className="max-w-[1600px] mx-auto">
         <h2
