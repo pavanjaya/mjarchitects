@@ -11,6 +11,7 @@ const navLinks = [
   { label: "Studio", href: "/studio" },
   { label: "Philosophy", href: "/philosophy" },
   { label: "Process", href: "/process" },
+  { label: "Services", href: "/services" },
   { label: "Journal", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
