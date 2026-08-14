@@ -28,22 +28,14 @@ export default function Statement() {
         </h2>
 
         <Reveal delay={0.1}>
-          <div className="grid sm:grid-cols-2 gap-8 sm:gap-16 max-w-3xl mx-auto">
-            <p
-              className="text-sm leading-relaxed text-left"
-              style={{ color: "var(--muted)" }}
-            >
-              Sense gives architecture its order — logic, geometry,
-              proportion, structure, and clarity.
-            </p>
-            <p
-              className="text-sm leading-relaxed text-left"
-              style={{ color: "var(--muted)" }}
-            >
-              Sensibility gives it depth — light, material, texture, scale,
-              and human experience.
-            </p>
-          </div>
+          <p
+            className="text-sm leading-relaxed max-w-2xl mx-auto"
+            style={{ color: "var(--muted)" }}
+          >
+            Sense gives architecture its order — logic, geometry, proportion,
+            structure, and clarity. Sensibility gives it depth — light,
+            material, texture, scale, and human experience.
+          </p>
         </Reveal>
 
         <Reveal delay={0.15}>

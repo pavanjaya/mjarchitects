@@ -13,7 +13,7 @@ const steps = [
 
 export default function ProcessTeaser() {
   return (
-    <section id="process" className="py-24 px-6 md:px-12">
+    <section id="process" className="py-24 px-6 md:px-12" style={{ background: "var(--surface)" }}>
       <div className="max-w-[1600px] mx-auto">
         <div className="grid lg:grid-cols-[1fr_2fr] gap-12 lg:gap-20">
           {/* Left */}
