@@ -47,7 +47,7 @@ export default function Studio() {
 
         <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-24 mb-20 md:mb-28">
           <Reveal>
-            <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
+            <p className="font-serif text-xl leading-relaxed" style={{ color: "var(--muted)" }}>
               Architecture begins with its conditions — the character of a
               place, the needs of its inhabitants, the qualities of its
               materials, and the forces of climate, culture, and time.
