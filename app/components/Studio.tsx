@@ -117,6 +117,82 @@ export default function Studio() {
 
         <Reveal>
           <div
+            className="pt-16 md:pt-20 mb-20 md:mb-28"
+            style={{ borderTop: "1px solid var(--border)" }}
+          >
+            <p
+              className="text-[12px] uppercase mb-8"
+              style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
+            >
+              (Principal Architect)
+            </p>
+            <h2
+              className="font-display uppercase mb-10 max-w-3xl"
+              style={{
+                color: "var(--foreground)",
+                fontSize: "clamp(1.75rem, 3vw, 2.5rem)",
+                letterSpacing: "-0.02em",
+                lineHeight: 1.1,
+              }}
+            >
+              Architect Mahesh Jangid
+            </h2>
+
+            <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-24">
+              <p
+                className="text-lg leading-relaxed"
+                style={{ color: "var(--foreground)" }}
+              >
+                {strong(
+                  "Mahesh Jangid is an architect and Principal Architect at MJ Architects"
+                )}
+                , with a practice grounded in the relationship between space,
+                structure, material, and human experience.
+              </p>
+
+              <div className="space-y-6 max-w-2xl">
+                <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
+                  He studied architecture at{" "}
+                  {strong("N.D.M.V.P. Samaj's College of Architecture, Nashik")}
+                  , completing his Bachelor of Architecture in 2005. His early
+                  professional practice with {strong("Aijaz Hakim Architect")}{" "}
+                  and {strong("STUP Consultants")} in Pune shaped a rigorous
+                  understanding of architectural design, technical
+                  resolution, and the relationship between an idea and its
+                  built expression.
+                </p>
+                <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
+                  Since 2019, Mahesh has led the architectural practice at{" "}
+                  {strong("MJ Architects")}, where his work continues to
+                  explore the essential qualities of architecture —{" "}
+                  {strong("proportion, geometry, light, material, structure, and scale")}
+                  . Rather than pursuing a predetermined aesthetic, he
+                  approaches each project through its particular conditions,
+                  allowing the architecture to emerge from its context,
+                  purpose, and experience.
+                </p>
+                <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
+                  His approach is defined by{" "}
+                  {strong("clarity, restraint, and attention to detail")}.
+                  Structure provides order; material and light introduce
+                  depth; and human experience gives space its meaning. This
+                  balance between precision and sensibility forms the
+                  foundation of his work and the evolving architectural
+                  language of MJ Architects.
+                </p>
+                <p
+                  className="font-serif italic text-lg"
+                  style={{ color: "var(--foreground)" }}
+                >
+                  Sense. Sensibility. Space.
+                </p>
+              </div>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <div
             className="pt-16 md:pt-20 mb-20 md:mb-28 text-center"
             style={{ borderTop: "1px solid var(--border)" }}
           >
