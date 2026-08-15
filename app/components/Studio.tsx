@@ -17,17 +17,6 @@ export default function Studio() {
           >
             About the Studio
           </p>
-          <h2
-            className="font-display uppercase mb-10"
-            style={{
-              color: "var(--foreground)",
-              fontSize: "clamp(2rem, 3.5vw, 3rem)",
-              letterSpacing: "-0.02em",
-              lineHeight: 1.05,
-            }}
-          >
-            Sense. Sensibility. Space.
-          </h2>
           <p
             className="font-display mb-16 md:mb-20 max-w-4xl"
             style={{
