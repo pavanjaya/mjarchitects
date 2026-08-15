@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Reveal from "./Reveal";
+import RotatingMonogram from "./motion/RotatingMonogram";
 
 const themes = [
   {
@@ -229,6 +230,8 @@ export default function Philosophy() {
             </p>
           </div>
         </Reveal>
+
+        <RotatingMonogram />
 
         <div style={{ borderTop: "1px solid var(--border)" }}>
           {themes.map((theme, i) => {
