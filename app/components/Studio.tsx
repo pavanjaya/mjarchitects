@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
 
@@ -139,16 +140,29 @@ export default function Studio() {
             </h2>
 
             <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-24">
-              <p
-                className="text-lg leading-relaxed"
-                style={{ color: "var(--foreground)" }}
-              >
-                {strong(
-                  "Mahesh Jangid is an architect and Principal Architect at MJ Architects"
-                )}
-                , with a practice grounded in the relationship between space,
-                structure, material, and human experience.
-              </p>
+              <div>
+                <div
+                  className="relative w-full aspect-[4/5] mb-8"
+                  style={{ background: "var(--surface)" }}
+                >
+                  <Image
+                    src="/mahesh-jangid.png"
+                    alt="Mahesh Jangid, Principal Architect at MJ Architects"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+                <p
+                  className="text-lg leading-relaxed"
+                  style={{ color: "var(--foreground)" }}
+                >
+                  {strong(
+                    "Mahesh Jangid is an architect and Principal Architect at MJ Architects"
+                  )}
+                  , with a practice grounded in the relationship between space,
+                  structure, material, and human experience.
+                </p>
+              </div>
 
               <div className="space-y-6 max-w-2xl">
                 <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
