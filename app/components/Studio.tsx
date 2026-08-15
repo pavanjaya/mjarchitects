@@ -42,6 +42,20 @@ export default function Studio() {
           </p>
         </Reveal>
 
+        <Reveal delay={0.05}>
+          <div className="relative w-full aspect-video mb-20 md:mb-28 overflow-hidden">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover"
+            >
+              <source src="/273921_medium.mp4" type="video/mp4" />
+            </video>
+          </div>
+        </Reveal>
+
         <div className="grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-24 mb-20 md:mb-28">
           <Reveal>
             <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
