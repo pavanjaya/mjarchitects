@@ -1,3 +1,7 @@
+"use client";
+
+import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Reveal from "./Reveal";
 
 const themes = [
@@ -188,6 +192,8 @@ const themes = [
 ];
 
 export default function Philosophy() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
   return (
     <section
       id="philosophy"
@@ -225,38 +231,60 @@ export default function Philosophy() {
         </Reveal>
 
         <div style={{ borderTop: "1px solid var(--border)" }}>
-          {themes.map((theme, i) => (
-            <Reveal key={theme.num} delay={(i % 4) * 0.05}>
-              <div
-                className="grid md:grid-cols-[auto_1fr_2fr] gap-4 md:gap-10 py-12 md:py-14"
-                style={{ borderBottom: "1px solid var(--border)" }}
-              >
-                <span
-                  className="text-[13px] font-display shrink-0"
-                  style={{ color: "var(--muted)" }}
+          {themes.map((theme, i) => {
+            const open = openIndex === i;
+            return (
+              <div key={theme.num} style={{ borderBottom: "1px solid var(--border)" }}>
+                <button
+                  onClick={() => setOpenIndex(open ? null : i)}
+                  className="w-full text-left py-8 md:py-10 flex items-center gap-6 md:gap-10 group"
                 >
-                  {theme.num}
-                </span>
-                <h3
-                  className="font-display uppercase"
-                  style={{
-                    color: "var(--foreground)",
-                    fontSize: "clamp(1.25rem, 2vw, 1.75rem)",
-                    letterSpacing: "-0.01em",
-                    lineHeight: 1.15,
-                  }}
-                >
-                  {theme.title}
-                </h3>
-                <div
-                  className="text-base leading-relaxed max-w-2xl"
-                  style={{ color: "var(--muted)" }}
-                >
-                  {theme.body}
-                </div>
+                  <span
+                    className="text-[13px] font-display shrink-0 w-10"
+                    style={{ color: "var(--muted)" }}
+                  >
+                    {theme.num}
+                  </span>
+                  <span
+                    className="font-display uppercase flex-1"
+                    style={{
+                      color: "var(--foreground)",
+                      fontSize: "clamp(1.25rem, 2vw, 1.75rem)",
+                      letterSpacing: "-0.01em",
+                      lineHeight: 1.15,
+                    }}
+                  >
+                    {theme.title}
+                  </span>
+                  <span
+                    className="text-[12px] uppercase shrink-0 transition-colors duration-300"
+                    style={{ color: open ? "var(--accent)" : "var(--foreground)" }}
+                  >
+                    {open ? "LESS −" : "MORE +"}
+                  </span>
+                </button>
+
+                <AnimatePresence initial={false}>
+                  {open && (
+                    <motion.div
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+                      className="overflow-hidden"
+                    >
+                      <div
+                        className="pb-10 md:pb-12 pl-16 md:pl-20 text-base leading-relaxed max-w-2xl"
+                        style={{ color: "var(--muted)" }}
+                      >
+                        {theme.body}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-            </Reveal>
-          ))}
+            );
+          })}
         </div>
 
         <Reveal>
