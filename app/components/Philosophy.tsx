@@ -192,7 +192,7 @@ export default function Philosophy() {
     <section
       id="philosophy"
       className="py-24 px-6 md:px-12"
-      style={{ background: "var(--surface)" }}
+      style={{ background: "var(--background)" }}
     >
       <div className="max-w-[1600px] mx-auto">
         <Reveal>
