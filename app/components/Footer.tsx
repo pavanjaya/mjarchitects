@@ -1,9 +1,15 @@
 "use client";
 
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Logo from "./Logo";
 
-const socials = ["Instagram", "LinkedIn", "Dezeen", "Archinect"];
+const socials = [
+  { label: "Instagram", href: "https://www.instagram.com/themjarchitects/" },
+  { label: "LinkedIn", href: "https://www.linkedin.com/company/themjarchitects/" },
+  { label: "Facebook", href: "https://www.facebook.com/mjarchitects.official" },
+  { label: "Archinect", href: "#" },
+];
 
 export default function Footer() {
   return (
@@ -67,14 +73,16 @@ export default function Footer() {
 
           {/* Social */}
           <div className="flex flex-col gap-3 md:items-end">
-            {socials.map((link) => (
+            {socials.map((social) => (
               <a
-                key={link}
-                href="#"
+                key={social.label}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="relative group inline-block font-display uppercase pb-1"
                 style={{ color: "var(--background)", fontSize: "clamp(1.125rem, 2vw, 1.5rem)", letterSpacing: "-0.01em" }}
               >
-                {link}
+                {social.label}
                 <span
                   className="absolute left-0 -bottom-0 h-px w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
                   style={{ background: "currentColor" }}
@@ -89,12 +97,17 @@ export default function Footer() {
             <Logo className="h-[34.56px] md:h-[40.32px] w-auto" />
           </div>
 
-          <p
-            className="text-[12px] uppercase"
+          <Link
+            href="/privacy"
+            className="relative group inline-block text-[12px] uppercase pb-1"
             style={{ color: "rgba(255,255,255,0.5)", letterSpacing: "0.05em" }}
           >
             Privacy Policy
-          </p>
+            <span
+              className="absolute left-0 -bottom-0 h-px w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
+              style={{ background: "currentColor" }}
+            />
+          </Link>
 
           <p
             className="text-[12px]"
@@ -103,12 +116,19 @@ export default function Footer() {
             © 2026 MJ Architects. All rights reserved.
           </p>
 
-          <p
-            className="text-[12px]"
+          <a
+            href="https://www.hueness.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="relative group inline-block text-[12px] pb-1"
             style={{ color: "rgba(255,255,255,0.5)" }}
           >
             Made by Hueness
-          </p>
+            <span
+              className="absolute left-0 -bottom-0 h-px w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
+              style={{ background: "currentColor" }}
+            />
+          </a>
         </div>
       </div>
     </footer>
