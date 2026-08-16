@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import Reveal from "./Reveal";
-import RotatingMonogram from "./motion/RotatingMonogram";
 
 const themes = [
   {
@@ -202,38 +201,34 @@ export default function Philosophy() {
       style={{ background: "var(--background)" }}
     >
       <div className="max-w-[1600px] mx-auto">
-        <div className="grid lg:grid-cols-[1.5fr_1fr] gap-12 lg:gap-24 mb-20 md:mb-28">
-          <Reveal>
-            <div className="max-w-3xl">
-              <p
-                className="text-[12px] uppercase mb-8"
-                style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
-              >
-                Our Philosophy
-              </p>
-              <h2
-                className="font-display uppercase mb-8"
-                style={{
-                  color: "var(--foreground)",
-                  fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
-                  letterSpacing: "-0.02em",
-                  lineHeight: 1.1,
-                }}
-              >
-                Understanding a place before intervening in it. Understanding
-                people before designing for them. Understanding material
-                before giving it form.
-              </h2>
-              <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
-                And understanding that space is not merely what surrounds us,
-                but what shapes how we live, move, gather, pause, and
-                experience.
-              </p>
-            </div>
-          </Reveal>
-
-          <RotatingMonogram />
-        </div>
+        <Reveal>
+          <div className="max-w-3xl mb-20 md:mb-28">
+            <p
+              className="text-[12px] uppercase mb-8"
+              style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
+            >
+              Our Philosophy
+            </p>
+            <h2
+              className="font-display uppercase mb-8"
+              style={{
+                color: "var(--foreground)",
+                fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
+                letterSpacing: "-0.02em",
+                lineHeight: 1.1,
+              }}
+            >
+              Understanding a place before intervening in it. Understanding
+              people before designing for them. Understanding material
+              before giving it form.
+            </h2>
+            <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
+              And understanding that space is not merely what surrounds us,
+              but what shapes how we live, move, gather, pause, and
+              experience.
+            </p>
+          </div>
+        </Reveal>
 
         <div style={{ borderTop: "1px solid var(--border)" }}>
           {themes.map((theme, i) => {
