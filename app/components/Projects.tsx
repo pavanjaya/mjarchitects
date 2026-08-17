@@ -37,16 +37,20 @@ export default function Projects({ featured = false }: { featured?: boolean }) {
 
             {/* Filter */}
             {!featured && (
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-6">
                 {categories.map((cat) => (
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className="text-[13px] font-display rounded-full px-6 py-3 transition-colors duration-300"
+                    className="text-[13px] uppercase font-display transition-colors duration-300"
                     style={{
-                      color: activeCategory === cat ? "var(--background)" : "var(--foreground)",
-                      background: activeCategory === cat ? "var(--foreground)" : "var(--surface)",
+                      color:
+                        activeCategory === cat ? "var(--foreground)" : "var(--muted)",
                       letterSpacing: "-0.01em",
+                      borderBottom:
+                        activeCategory === cat
+                          ? "1px solid var(--foreground)"
+                          : "1px solid transparent",
                     }}
                   >
                     {cat}
