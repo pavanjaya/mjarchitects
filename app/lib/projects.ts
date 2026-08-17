@@ -4,7 +4,7 @@ export type Project = {
   name: string;
   location: string;
   year: string;
-  category: "Commercial" | "Residential" | "Institutional" | "Cultural";
+  category: "Industrial" | "Residential" | "Commercial" | "Healthcare" | "Institutional" | "Hospitality";
   tags: string[];
   color: string;
   image?: string;
@@ -68,7 +68,7 @@ export const projects: Project[] = [
     name: "Souk Al Mira",
     location: "Dubai, UAE",
     year: "2022",
-    category: "Cultural",
+    category: "Commercial",
     tags: ["Cultural", "Heritage", "Urban"],
     color: "#c9b9ae",
     description:
@@ -84,7 +84,7 @@ export const projects: Project[] = [
     name: "The Floating Pavilion",
     location: "Backwaters, Kerala",
     year: "2022",
-    category: "Cultural",
+    category: "Hospitality",
     tags: ["Pavilion", "Water", "Craft"],
     color: "#b8c7c9",
     description:
