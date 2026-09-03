@@ -72,7 +72,7 @@ function StepRow({ step, isLast }: { step: (typeof steps)[number]; isLast: boole
       <div className="w-24 sm:w-32 md:w-40 shrink-0">
         <div
           className="relative w-full aspect-square overflow-hidden"
-          style={{ background: "var(--background)" }}
+          style={{ background: "var(--surface)" }}
         >
           <motion.div
             className="absolute inset-0"
@@ -146,7 +146,7 @@ function StepRow({ step, isLast }: { step: (typeof steps)[number]; isLast: boole
 
 export default function Process() {
   return (
-    <section id="process" className="py-28 md:py-36 px-6 md:px-12" style={{ background: "var(--surface)" }}>
+    <section id="process" className="py-28 md:py-36 px-6 md:px-12" style={{ background: "var(--background)" }}>
       <div className="max-w-[1600px] mx-auto">
         <Reveal>
           <div className="max-w-3xl mb-24 md:mb-32">
