@@ -32,6 +32,10 @@ export const projects: Project[] = [
       "/projects/apartments/raj-crest/04.png",
     ],
     builtUp: "13,355 sqm",
+    paragraphs: [
+      "Raj Crest is a 13,355 sqm residential development in Nashik, completed in 2019, conceived as a community shaped as much by shared life as by private dwelling. Geometry and proportion set the underlying order — a grid disciplined enough to organise many households, flexible enough to let each unit find its own orientation. Every unit was designed to catch daylight and air on at least two sides, a small discipline that changes how a home feels through the day.",
+      "The ground floor was treated as the building's most public room — a threshold between the street and the private life above it. It reflects the studio's continuing pursuit of sense, sensibility, and space — order, depth, and life, brought together in one address.",
+    ],
   },
   {
     id: "02",
@@ -52,6 +56,10 @@ export const projects: Project[] = [
       "/projects/apartments/shankar-nagar/06.png",
     ],
     builtUp: "27,599 sqm",
+    paragraphs: [
+      "In Nashik, Shankar Nagar brings together 27,599 sqm of residential space, completed in 2022, organised around the everyday rhythms of the families who call it home. The massing steps and folds in response to the site's edges, turning setbacks and orientation requirements into the building's defining geometry rather than its compromise. Balcony depth, window proportion, and material texture were treated as amenities in themselves, not afterthoughts to the plan.",
+      "Circulation is generous enough to function as informal gathering space, encouraging the everyday exchange that makes a building feel inhabited rather than occupied. Like all our work, it is built on the belief that architecture should be inhabited, not merely occupied.",
+    ],
   },
   {
     id: "03",
@@ -71,6 +79,10 @@ export const projects: Project[] = [
       "/projects/apartments/raj-tower/05.png",
     ],
     builtUp: "8,776 sqm",
+    paragraphs: [
+      "Raj Tower, completed in 2017 in Nashik, spans 8,776 sqm — a scale that asked us to design not just units, but a shared address. A considered grid and a clear structural logic give the building its order, so that scale never tips into anonymity. Light and ventilation were treated as design drivers from the earliest massing studies, not resolved later at the window-schedule stage.",
+      "Each unit opens toward light and outlook wherever the site allowed, so residents experience the building through daily moments of arrival and pause, not just square footage. The result is a project that measures itself not only by how it looks, but by how it is lived in.",
+    ],
   },
   {
     id: "04",
@@ -89,6 +101,10 @@ export const projects: Project[] = [
       "/projects/apartments/ambar-arcade/04.png",
     ],
     builtUp: "7,772 sqm",
+    paragraphs: [
+      "Set in Nashik and completed in 2026, Ambar Arcade is a 7,772 sqm apartment community built on a simple premise: that density need not come at the cost of light, air, or privacy. Facade rhythm and unit geometry were resolved together, so structure and elevation read as one decision rather than two. Balconies, fenestration, and material choices were tuned to bring light and cross-ventilation into every unit, not just the corner ones.",
+      "The building's shared spaces were given the same attention as its private ones, on the belief that a home begins at the gate, not the front door. For us, it is one more attempt to bring sense and sensibility into balance — structure with clarity, material with warmth.",
+    ],
   },
   {
     id: "05",
@@ -109,6 +125,10 @@ export const projects: Project[] = [
       "/projects/apartments/pandav-enclave/06.png",
     ],
     builtUp: "8,846 sqm",
+    paragraphs: [
+      "Pandav Enclave occupies 8,846 sqm in Nashik, completed in 2021, and was designed as a vertical neighbourhood rather than a stack of identical units. Orientation, massing, and structural grid were worked out together from the first sketch, so the building's order comes from its logic rather than applied decoration. Material and colour were kept restrained, so the building ages by weathering honestly rather than by looking dated.",
+      "Entrances, staircases, and common areas were designed as places to pause and meet, not just corridors between a unit and the street. It stands as part of MJ Architects' ongoing exploration of how sense, sensibility, and space come together in the built environment.",
+    ],
   },
   {
     id: "06",
@@ -128,6 +148,10 @@ export const projects: Project[] = [
       "/projects/apartments/prathmesh-park/05.png",
     ],
     builtUp: "7,977 sqm",
+    paragraphs: [
+      "Completed in 2019, Prathmesh Park is a 7,977 sqm residential project in Nashik that treats scale as a question of community, not just capacity. Geometry and proportion set the underlying order — a grid disciplined enough to organise many households, flexible enough to let each unit find its own orientation. Every unit was designed to catch daylight and air on at least two sides, a small discipline that changes how a home feels through the day.",
+      "The ground floor was treated as the building's most public room — a threshold between the street and the private life above it. In the end, it is measured less by its elevation than by how naturally it has been taken up by the people who use it.",
+    ],
   },
   {
     id: "07",
@@ -146,6 +170,10 @@ export const projects: Project[] = [
       "/projects/apartments/mhada-satpur/04.png",
     ],
     builtUp: "4,953 sqm",
+    paragraphs: [
+      "Mhada Satpur is a 4,953 sqm residential development in Nashik, completed in 2024, conceived as a community shaped as much by shared life as by private dwelling. The massing steps and folds in response to the site's edges, turning setbacks and orientation requirements into the building's defining geometry rather than its compromise. Balcony depth, window proportion, and material texture were treated as amenities in themselves, not afterthoughts to the plan.",
+      "Circulation is generous enough to function as informal gathering space, encouraging the everyday exchange that makes a building feel inhabited rather than occupied. It reflects the studio's continuing pursuit of sense, sensibility, and space — order, depth, and life, brought together in one address.",
+    ],
   },
   {
     id: "08",
@@ -163,6 +191,10 @@ export const projects: Project[] = [
       "/projects/apartments/cosmos-chember/03.png",
     ],
     builtUp: "7,473 sqm",
+    paragraphs: [
+      "In Nashik, Cosmos Chember brings together 7,473 sqm of residential space, completed in 2026, organised around the everyday rhythms of the families who call it home. A considered grid and a clear structural logic give the building its order, so that scale never tips into anonymity. Light and ventilation were treated as design drivers from the earliest massing studies, not resolved later at the window-schedule stage.",
+      "Each unit opens toward light and outlook wherever the site allowed, so residents experience the building through daily moments of arrival and pause, not just square footage. Like all our work, it is built on the belief that architecture should be inhabited, not merely occupied.",
+    ],
   },
   {
     id: "09",
@@ -182,6 +214,10 @@ export const projects: Project[] = [
       "/projects/apartments/vintage-valley/05.png",
     ],
     builtUp: "6,985 sqm",
+    paragraphs: [
+      "Vintage Valley, completed in 2024 in Igatpuri, spans 6,985 sqm — a scale that asked us to design not just units, but a shared address. Facade rhythm and unit geometry were resolved together, so structure and elevation read as one decision rather than two. Balconies, fenestration, and material choices were tuned to bring light and cross-ventilation into every unit, not just the corner ones.",
+      "The building's shared spaces were given the same attention as its private ones, on the belief that a home begins at the gate, not the front door. The result is a project that measures itself not only by how it looks, but by how it is lived in.",
+    ],
   },
   {
     id: "10",
@@ -200,6 +236,10 @@ export const projects: Project[] = [
       "/projects/apartments/krishnai-galaxy/04.png",
     ],
     builtUp: "3,847 sqm",
+    paragraphs: [
+      "Set in Nashik and completed in 2019, Krishnai Galaxy is a 3,847 sqm apartment community built on a simple premise: that density need not come at the cost of light, air, or privacy. Orientation, massing, and structural grid were worked out together from the first sketch, so the building's order comes from its logic rather than applied decoration. Material and colour were kept restrained, so the building ages by weathering honestly rather than by looking dated.",
+      "Entrances, staircases, and common areas were designed as places to pause and meet, not just corridors between a unit and the street. For us, it is one more attempt to bring sense and sensibility into balance — structure with clarity, material with warmth.",
+    ],
   },
   {
     id: "11",
@@ -218,6 +258,10 @@ export const projects: Project[] = [
       "/projects/apartments/natures-pride/04.png",
     ],
     builtUp: "2,249 sqm",
+    paragraphs: [
+      "Nature's Pride occupies 2,249 sqm in Nashik, completed in 2024, and was designed as a vertical neighbourhood rather than a stack of identical units. Geometry and proportion set the underlying order — a grid disciplined enough to organise many households, flexible enough to let each unit find its own orientation. Every unit was designed to catch daylight and air on at least two sides, a small discipline that changes how a home feels through the day.",
+      "The ground floor was treated as the building's most public room — a threshold between the street and the private life above it. It stands as part of MJ Architects' ongoing exploration of how sense, sensibility, and space come together in the built environment.",
+    ],
   },
   {
     id: "12",
@@ -235,6 +279,10 @@ export const projects: Project[] = [
       "/projects/apartments/indu-park/03.png",
     ],
     builtUp: "2,175 sqm",
+    paragraphs: [
+      "Completed in 2026, Indu Park is a 2,175 sqm residential project in Nashik that treats scale as a question of community, not just capacity. The massing steps and folds in response to the site's edges, turning setbacks and orientation requirements into the building's defining geometry rather than its compromise. Balcony depth, window proportion, and material texture were treated as amenities in themselves, not afterthoughts to the plan.",
+      "Circulation is generous enough to function as informal gathering space, encouraging the everyday exchange that makes a building feel inhabited rather than occupied. In the end, it is measured less by its elevation than by how naturally it has been taken up by the people who use it.",
+    ],
   },
   {
     id: "13",
@@ -253,6 +301,10 @@ export const projects: Project[] = [
       "/projects/apartments/shri-ravi-enclave/04.png",
     ],
     builtUp: "4,849 sqm",
+    paragraphs: [
+      "Shri Ravi Enclave is a 4,849 sqm residential development in Nashik, completed in 2013, conceived as a community shaped as much by shared life as by private dwelling. A considered grid and a clear structural logic give the building its order, so that scale never tips into anonymity. Light and ventilation were treated as design drivers from the earliest massing studies, not resolved later at the window-schedule stage.",
+      "Each unit opens toward light and outlook wherever the site allowed, so residents experience the building through daily moments of arrival and pause, not just square footage. It reflects the studio's continuing pursuit of sense, sensibility, and space — order, depth, and life, brought together in one address.",
+    ],
   },
   {
     id: "14",
@@ -272,6 +324,10 @@ export const projects: Project[] = [
       "/projects/apartments/aakar-beyond/05.png",
     ],
     builtUp: "2,481 sqm",
+    paragraphs: [
+      "In Nashik, Aakar Beyond brings together 2,481 sqm of residential space, completed in 2018, organised around the everyday rhythms of the families who call it home. Facade rhythm and unit geometry were resolved together, so structure and elevation read as one decision rather than two. Balconies, fenestration, and material choices were tuned to bring light and cross-ventilation into every unit, not just the corner ones.",
+      "The building's shared spaces were given the same attention as its private ones, on the belief that a home begins at the gate, not the front door. Like all our work, it is built on the belief that architecture should be inhabited, not merely occupied.",
+    ],
   },
   {
     id: "15",
@@ -289,6 +345,10 @@ export const projects: Project[] = [
       "/projects/apartments/parkside-palms/03.png",
     ],
     builtUp: "3,109 sqm",
+    paragraphs: [
+      "Parkside Palms, completed in 2026 in Nashik, spans 3,109 sqm — a scale that asked us to design not just units, but a shared address. Orientation, massing, and structural grid were worked out together from the first sketch, so the building's order comes from its logic rather than applied decoration. Material and colour were kept restrained, so the building ages by weathering honestly rather than by looking dated.",
+      "Entrances, staircases, and common areas were designed as places to pause and meet, not just corridors between a unit and the street. The result is a project that measures itself not only by how it looks, but by how it is lived in.",
+    ],
   },
   {
     id: "16",
@@ -306,6 +366,10 @@ export const projects: Project[] = [
       "/projects/apartments/paramkaruna-apartment/03.png",
     ],
     builtUp: "1,051 sqm",
+    paragraphs: [
+      "Set in Nashik and completed in 2026, Paramkaruna Apartment is a 1,051 sqm apartment community built on a simple premise: that density need not come at the cost of light, air, or privacy. Geometry and proportion set the underlying order — a grid disciplined enough to organise many households, flexible enough to let each unit find its own orientation. Every unit was designed to catch daylight and air on at least two sides, a small discipline that changes how a home feels through the day.",
+      "The ground floor was treated as the building's most public room — a threshold between the street and the private life above it. For us, it is one more attempt to bring sense and sensibility into balance — structure with clarity, material with warmth.",
+    ],
   },
   {
     id: "17",
@@ -324,6 +388,10 @@ export const projects: Project[] = [
       "/projects/apartments/garden-view-apartment/04.png",
     ],
     builtUp: "1,065 sqm",
+    paragraphs: [
+      "Garden View Apartment occupies 1,065 sqm in Nashik, completed in 2025, and was designed as a vertical neighbourhood rather than a stack of identical units. The massing steps and folds in response to the site's edges, turning setbacks and orientation requirements into the building's defining geometry rather than its compromise. Balcony depth, window proportion, and material texture were treated as amenities in themselves, not afterthoughts to the plan.",
+      "Circulation is generous enough to function as informal gathering space, encouraging the everyday exchange that makes a building feel inhabited rather than occupied. It stands as part of MJ Architects' ongoing exploration of how sense, sensibility, and space come together in the built environment.",
+    ],
   },
   {
     id: "18",
@@ -341,6 +409,10 @@ export const projects: Project[] = [
       "/projects/apartments/rukmini-park/03.png",
     ],
     builtUp: "560 sqm",
+    paragraphs: [
+      "Completed in 2020, Rukmini Park is a 560 sqm residential project in Nashik that treats scale as a question of community, not just capacity. A considered grid and a clear structural logic give the building its order, so that scale never tips into anonymity. Light and ventilation were treated as design drivers from the earliest massing studies, not resolved later at the window-schedule stage.",
+      "Each unit opens toward light and outlook wherever the site allowed, so residents experience the building through daily moments of arrival and pause, not just square footage. In the end, it is measured less by its elevation than by how naturally it has been taken up by the people who use it.",
+    ],
   },
   {
     id: "19",
@@ -360,6 +432,10 @@ export const projects: Project[] = [
       "/projects/apartments/shrishti-pandhari/05.jpg",
     ],
     builtUp: "7,432 sqm",
+    paragraphs: [
+      "Shrishti Pandhari is a 7,432 sqm residential development in Pandharpur, completed in 2015, conceived as a community shaped as much by shared life as by private dwelling. Facade rhythm and unit geometry were resolved together, so structure and elevation read as one decision rather than two. Balconies, fenestration, and material choices were tuned to bring light and cross-ventilation into every unit, not just the corner ones.",
+      "The building's shared spaces were given the same attention as its private ones, on the belief that a home begins at the gate, not the front door. It reflects the studio's continuing pursuit of sense, sensibility, and space — order, depth, and life, brought together in one address.",
+    ],
   },
   {
     id: "20",
@@ -371,6 +447,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Nashik"],
     color: "#bcc2c9",
     builtUp: "394 sqm",
+    paragraphs: [
+      "Jay Shankar Bungalow is a family residence in Nashik, completed in 2025 on a built-up area of 394 sqm, designed around the particular rhythms of the household it was built for. The plan is organised around a clear geometry — rooms sequenced by use and privacy rather than by convention — giving the house an underlying order that is easy to live with. Natural light, material texture, and a restrained palette give the home its character, rather than ornament applied after the fact.",
+      "The house is organised to be experienced gradually — arrival, threshold, gathering space, and private room — rather than taken in all at once. For us, it is one more attempt to bring sense and sensibility into balance — structure with clarity, material with warmth.",
+    ],
   },
   {
     id: "21",
@@ -382,6 +462,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Pimpalgaon"],
     color: "#c9b9ae",
     builtUp: "681 sqm",
+    paragraphs: [
+      "Completed in 2026 in Pimpalgaon, Siddheshwar Walekar is a 681 sqm home shaped less by a predetermined style than by its site and the family it serves. Structure and proportion were resolved early, so the home's geometry stays legible even as it responds to the specific demands of its site. Openings, courtyards, and material transitions were considered for how they feel underfoot and overhead, not only how they read in a photograph.",
+      "Every room was designed with a specific moment of the family's day in mind, from morning light in the kitchen to evening shade on the verandah. It stands as part of MJ Architects' ongoing exploration of how sense, sensibility, and space come together in the built environment.",
+    ],
   },
   {
     id: "22",
@@ -393,6 +477,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Pimpalgaon"],
     color: "#b8c7c9",
     builtUp: "734 sqm",
+    paragraphs: [
+      "Pravin Walekar, completed in 2026, sits on 734 sqm in Pimpalgaon — a home designed from the inside out, starting with how the family actually lives. A disciplined plan and a considered structural grid give the house its order, freeing the rest of the design to respond to light, material, and everyday use. Material choices favour warmth and durability over display, so the house feels lived-in rather than staged.",
+      "The sequence from entry to living spaces to private rooms was designed as a series of thresholds, each marking a shift in privacy and light. In the end, it is measured less by its elevation than by how naturally it has been taken up by the people who use it.",
+    ],
   },
   {
     id: "23",
@@ -404,6 +492,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Pipariya, Madhya Pradesh"],
     color: "#c2bcc9",
     builtUp: "1,100 sqm",
+    paragraphs: [
+      "In Pipariya, Madhya Pradesh, Shyamji Soni Pipariya is a 1,100 sqm residence completed in 2021, conceived as a quiet, considered response to its site and its clients. Orientation and massing were shaped by the site's conditions first — sun path, approach, and neighbouring context — before any room was drawn. Material and light were chosen to age well and feel warm at close range — the qualities a family notices every day, long after a house is finished.",
+      "Courtyards, verandahs, and transition spaces give the family room to gather and to withdraw, within the same home. It reflects the studio's continuing pursuit of sense, sensibility, and space — order, depth, and life, brought together in one address.",
+    ],
   },
   {
     id: "24",
@@ -415,6 +507,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Shahada"],
     color: "#c9c4b6",
     builtUp: "246 sqm",
+    paragraphs: [
+      "Rahul Chaudhari occupies 246 sqm in Shahada, completed in 2018, built on the conviction that a family home should be understood before it is designed. The plan is organised around a clear geometry — rooms sequenced by use and privacy rather than by convention — giving the house an underlying order that is easy to live with. Natural light, material texture, and a restrained palette give the home its character, rather than ornament applied after the fact.",
+      "The house is organised to be experienced gradually — arrival, threshold, gathering space, and private room — rather than taken in all at once. Like all our work, it is built on the belief that architecture should be inhabited, not merely occupied.",
+    ],
   },
   {
     id: "25",
@@ -426,6 +522,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Makhmalabad, Nashik"],
     color: "#b9c0b4",
     builtUp: "349 sqm",
+    paragraphs: [
+      "Completed in 2018, Deepak Bodhale is a 349 sqm house in Makhmalabad, Nashik that treats the brief — a family's daily life — as the real starting point of the design. Structure and proportion were resolved early, so the home's geometry stays legible even as it responds to the specific demands of its site. Openings, courtyards, and material transitions were considered for how they feel underfoot and overhead, not only how they read in a photograph.",
+      "Every room was designed with a specific moment of the family's day in mind, from morning light in the kitchen to evening shade on the verandah. The result is a project that measures itself not only by how it looks, but by how it is lived in.",
+    ],
   },
   {
     id: "26",
@@ -437,6 +537,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Shahada"],
     color: "#bcc2c9",
     builtUp: "692 sqm",
+    paragraphs: [
+      "Dr. Avinash Chaudhari is a family residence in Shahada, completed in 2020 on a built-up area of 692 sqm, designed around the particular rhythms of the household it was built for. A disciplined plan and a considered structural grid give the house its order, freeing the rest of the design to respond to light, material, and everyday use. Material choices favour warmth and durability over display, so the house feels lived-in rather than staged.",
+      "The sequence from entry to living spaces to private rooms was designed as a series of thresholds, each marking a shift in privacy and light. For us, it is one more attempt to bring sense and sensibility into balance — structure with clarity, material with warmth.",
+    ],
   },
   {
     id: "27",
@@ -448,6 +552,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Taloda, Nandurbar"],
     color: "#c9b9ae",
     builtUp: "386 sqm",
+    paragraphs: [
+      "Completed in 2018 in Taloda, Nandurbar, Sonawane Bungalow is a 386 sqm home shaped less by a predetermined style than by its site and the family it serves. Orientation and massing were shaped by the site's conditions first — sun path, approach, and neighbouring context — before any room was drawn. Material and light were chosen to age well and feel warm at close range — the qualities a family notices every day, long after a house is finished.",
+      "Courtyards, verandahs, and transition spaces give the family room to gather and to withdraw, within the same home. It stands as part of MJ Architects' ongoing exploration of how sense, sensibility, and space come together in the built environment.",
+    ],
   },
   {
     id: "28",
@@ -459,6 +567,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Shahada"],
     color: "#b8c7c9",
     builtUp: "355 sqm",
+    paragraphs: [
+      "Dharmendra Patel, completed in 2019, sits on 355 sqm in Shahada — a home designed from the inside out, starting with how the family actually lives. The plan is organised around a clear geometry — rooms sequenced by use and privacy rather than by convention — giving the house an underlying order that is easy to live with. Natural light, material texture, and a restrained palette give the home its character, rather than ornament applied after the fact.",
+      "The house is organised to be experienced gradually — arrival, threshold, gathering space, and private room — rather than taken in all at once. In the end, it is measured less by its elevation than by how naturally it has been taken up by the people who use it.",
+    ],
   },
   {
     id: "29",
@@ -470,6 +582,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Pethroad, Nashik"],
     color: "#c2bcc9",
     builtUp: "242 sqm",
+    paragraphs: [
+      "In Pethroad, Nashik, Ashok Bodke is a 242 sqm residence completed in 2016, conceived as a quiet, considered response to its site and its clients. Structure and proportion were resolved early, so the home's geometry stays legible even as it responds to the specific demands of its site. Openings, courtyards, and material transitions were considered for how they feel underfoot and overhead, not only how they read in a photograph.",
+      "Every room was designed with a specific moment of the family's day in mind, from morning light in the kitchen to evening shade on the verandah. It reflects the studio's continuing pursuit of sense, sensibility, and space — order, depth, and life, brought together in one address.",
+    ],
   },
   {
     id: "30",
@@ -481,6 +597,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Nashik"],
     color: "#c9c4b6",
     builtUp: "161 sqm",
+    paragraphs: [
+      "Dr. Akshay Patil occupies 161 sqm in Nashik, completed in 2025, built on the conviction that a family home should be understood before it is designed. A disciplined plan and a considered structural grid give the house its order, freeing the rest of the design to respond to light, material, and everyday use. Material choices favour warmth and durability over display, so the house feels lived-in rather than staged.",
+      "The sequence from entry to living spaces to private rooms was designed as a series of thresholds, each marking a shift in privacy and light. Like all our work, it is built on the belief that architecture should be inhabited, not merely occupied.",
+    ],
   },
   {
     id: "31",
@@ -492,6 +612,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Nashik"],
     color: "#b9c0b4",
     builtUp: "168 sqm",
+    paragraphs: [
+      "Completed in 2021, Ajay Patil is a 168 sqm house in Nashik that treats the brief — a family's daily life — as the real starting point of the design. Orientation and massing were shaped by the site's conditions first — sun path, approach, and neighbouring context — before any room was drawn. Material and light were chosen to age well and feel warm at close range — the qualities a family notices every day, long after a house is finished.",
+      "Courtyards, verandahs, and transition spaces give the family room to gather and to withdraw, within the same home. The result is a project that measures itself not only by how it looks, but by how it is lived in.",
+    ],
   },
   {
     id: "32",
@@ -503,6 +627,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Shahada"],
     color: "#bcc2c9",
     builtUp: "364 sqm",
+    paragraphs: [
+      "Dr. Chandrakant Patil is a family residence in Shahada, completed in 2020 on a built-up area of 364 sqm, designed around the particular rhythms of the household it was built for. The plan is organised around a clear geometry — rooms sequenced by use and privacy rather than by convention — giving the house an underlying order that is easy to live with. Natural light, material texture, and a restrained palette give the home its character, rather than ornament applied after the fact.",
+      "The house is organised to be experienced gradually — arrival, threshold, gathering space, and private room — rather than taken in all at once. For us, it is one more attempt to bring sense and sensibility into balance — structure with clarity, material with warmth.",
+    ],
   },
   {
     id: "33",
@@ -514,6 +642,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Taloda, Nandurbar"],
     color: "#c9b9ae",
     builtUp: "260 sqm",
+    paragraphs: [
+      "Completed in 2018 in Taloda, Nandurbar, Dr. Raj Khule is a 260 sqm home shaped less by a predetermined style than by its site and the family it serves. Structure and proportion were resolved early, so the home's geometry stays legible even as it responds to the specific demands of its site. Openings, courtyards, and material transitions were considered for how they feel underfoot and overhead, not only how they read in a photograph.",
+      "Every room was designed with a specific moment of the family's day in mind, from morning light in the kitchen to evening shade on the verandah. It stands as part of MJ Architects' ongoing exploration of how sense, sensibility, and space come together in the built environment.",
+    ],
   },
   {
     id: "34",
@@ -525,6 +657,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Shahada"],
     color: "#b8c7c9",
     builtUp: "223 sqm",
+    paragraphs: [
+      "Yashaswi Patil, completed in 2016, sits on 223 sqm in Shahada — a home designed from the inside out, starting with how the family actually lives. A disciplined plan and a considered structural grid give the house its order, freeing the rest of the design to respond to light, material, and everyday use. Material choices favour warmth and durability over display, so the house feels lived-in rather than staged.",
+      "The sequence from entry to living spaces to private rooms was designed as a series of thresholds, each marking a shift in privacy and light. In the end, it is measured less by its elevation than by how naturally it has been taken up by the people who use it.",
+    ],
   },
   {
     id: "35",
@@ -536,6 +672,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Mahswad, Shahada"],
     color: "#c2bcc9",
     builtUp: "268 sqm",
+    paragraphs: [
+      "In Mahswad, Shahada, Bhagwanbhai Chaudhari is a 268 sqm residence completed in 2016, conceived as a quiet, considered response to its site and its clients. Orientation and massing were shaped by the site's conditions first — sun path, approach, and neighbouring context — before any room was drawn. Material and light were chosen to age well and feel warm at close range — the qualities a family notices every day, long after a house is finished.",
+      "Courtyards, verandahs, and transition spaces give the family room to gather and to withdraw, within the same home. It reflects the studio's continuing pursuit of sense, sensibility, and space — order, depth, and life, brought together in one address.",
+    ],
   },
   {
     id: "36",
@@ -547,6 +687,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Nashik"],
     color: "#c9c4b6",
     builtUp: "898 sqm",
+    paragraphs: [
+      "Amol Patil Row House occupies 898 sqm in Nashik, completed in 2023, built on the conviction that a family home should be understood before it is designed. The plan is organised around a clear geometry — rooms sequenced by use and privacy rather than by convention — giving the house an underlying order that is easy to live with. Natural light, material texture, and a restrained palette give the home its character, rather than ornament applied after the fact.",
+      "The house is organised to be experienced gradually — arrival, threshold, gathering space, and private room — rather than taken in all at once. Like all our work, it is built on the belief that architecture should be inhabited, not merely occupied.",
+    ],
   },
   {
     id: "37",
@@ -558,6 +702,10 @@ export const projects: Project[] = [
     tags: ["Residential Bungalow", "Nashik"],
     color: "#b9c0b4",
     builtUp: "357 sqm",
+    paragraphs: [
+      "Completed in 2021, Nitin Sonawane Row House is a 357 sqm house in Nashik that treats the brief — a family's daily life — as the real starting point of the design. Structure and proportion were resolved early, so the home's geometry stays legible even as it responds to the specific demands of its site. Openings, courtyards, and material transitions were considered for how they feel underfoot and overhead, not only how they read in a photograph.",
+      "Every room was designed with a specific moment of the family's day in mind, from morning light in the kitchen to evening shade on the verandah. The result is a project that measures itself not only by how it looks, but by how it is lived in.",
+    ],
   },
   {
     id: "38",
@@ -568,6 +716,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Nashik"],
     color: "#bcc2c9",
+    paragraphs: [
+      "Shamkant Wagh is an interior project in Nashik, completed in 2025, working within an existing shell to shape how it is used every day. Space planning came first — a clear organisation of use, movement, and privacy within the existing structure — before any material or finish was chosen. Texture, light, and a restrained material palette give the space its character, favouring quality of detail over decoration.",
+      "The space was designed to support its daily use first, with atmosphere and character following from that clarity of purpose. Like all our work, it is built on the belief that architecture should be inhabited, not merely occupied.",
+    ],
   },
   {
     id: "39",
@@ -578,6 +730,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Nashik"],
     color: "#c9b9ae",
+    paragraphs: [
+      "Completed in 2024 in Nashik, Yoganand Ahire reimagines an interior from within — space planning, material, and light resolved together rather than treated as separate decisions. The layout was resolved as a sequence of zones defined by use and light, giving the interior a legible order within its existing walls. Every finish and fixture was chosen for how it performs and feels over years of use, not just on the day of handover.",
+      "Every zone was designed around the specific task or moment it needed to hold, so the interior functions as intended long after the finishes are chosen. The result is a project that measures itself not only by how it looks, but by how it is lived in.",
+    ],
   },
   {
     id: "40",
@@ -588,6 +744,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Nashik"],
     color: "#b8c7c9",
+    paragraphs: [
+      "Vinod Patil, completed in 2024 in Nashik, is an interior project built on the belief that a space is defined as much by how it is inhabited as by how it is built. Circulation and zoning were treated as the project's real structure, with finishes layered on only once that underlying order was clear. Light fittings, material joins, and finish transitions were resolved with the same care as the plan itself, since an interior is judged at arm's length.",
+      "The space is experienced as a sequence of moments — arrival, use, pause — rather than as a single composed view. For us, it is one more attempt to bring sense and sensibility into balance — structure with clarity, material with warmth.",
+    ],
   },
   {
     id: "41",
@@ -598,6 +758,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Nashik"],
     color: "#c2bcc9",
+    paragraphs: [
+      "In Nashik, Xtream Fitness — completed in 2022 — is an interior designed around the particular use it was built to serve. The plan was organised around use and flow first, so that every finish decision that followed had a clear spatial logic to sit within. A restrained material and lighting palette was chosen deliberately, so the space reads as considered rather than decorated.",
+      "The result is a space organised around how it is actually used — movement, pause, and gathering — rather than around a fixed idea of how it should look. It stands as part of MJ Architects' ongoing exploration of how sense, sensibility, and space come together in the built environment.",
+    ],
   },
   {
     id: "42",
@@ -608,6 +772,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Nashik"],
     color: "#c9c4b6",
+    paragraphs: [
+      "Akshay Study Abroad occupies an existing structure in Nashik, completed in 2022, reworked from within to suit the life and use it now holds. A disciplined layout — zones, circulation, and sightlines resolved early — gives the interior its order, independent of the finishes applied to it. Material, lighting, and detail were considered at close range — the scale at which an interior is actually experienced, day after day.",
+      "Light, threshold, and material work together so the space is experienced as a sequence, not a single view. In the end, it is measured less by its elevation than by how naturally it has been taken up by the people who use it.",
+    ],
   },
   {
     id: "43",
@@ -618,6 +786,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Nashik"],
     color: "#b9c0b4",
+    paragraphs: [
+      "Completed in 2022, CA Nilesh Gadhave in Nashik takes an existing shell as its starting point, reworking it from within rather than beginning from a blank site. Space planning came first — a clear organisation of use, movement, and privacy within the existing structure — before any material or finish was chosen. Texture, light, and a restrained material palette give the space its character, favouring quality of detail over decoration.",
+      "The space was designed to support its daily use first, with atmosphere and character following from that clarity of purpose. It reflects the studio's continuing pursuit of sense, sensibility, and space — order, depth, and life, brought together in one address.",
+    ],
   },
   {
     id: "44",
@@ -628,6 +800,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Nashik"],
     color: "#bcc2c9",
+    paragraphs: [
+      "Bhavsar Showroom, completed in 2022 in Nashik, treats the interior as its own design problem — distinct from, but disciplined by, the structure that contains it. The layout was resolved as a sequence of zones defined by use and light, giving the interior a legible order within its existing walls. Every finish and fixture was chosen for how it performs and feels over years of use, not just on the day of handover.",
+      "Every zone was designed around the specific task or moment it needed to hold, so the interior functions as intended long after the finishes are chosen. Like all our work, it is built on the belief that architecture should be inhabited, not merely occupied.",
+    ],
   },
   {
     id: "45",
@@ -638,6 +814,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Nashik"],
     color: "#c9b9ae",
+    paragraphs: [
+      "Shriji Park Home is an interior project in Nashik, completed in 2021, working within an existing shell to shape how it is used every day. Circulation and zoning were treated as the project's real structure, with finishes layered on only once that underlying order was clear. Light fittings, material joins, and finish transitions were resolved with the same care as the plan itself, since an interior is judged at arm's length.",
+      "The space is experienced as a sequence of moments — arrival, use, pause — rather than as a single composed view. The result is a project that measures itself not only by how it looks, but by how it is lived in.",
+    ],
   },
   {
     id: "46",
@@ -648,6 +828,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Nashik"],
     color: "#b8c7c9",
+    paragraphs: [
+      "Completed in 2021 in Nashik, Sahebrao Waghere reimagines an interior from within — space planning, material, and light resolved together rather than treated as separate decisions. The plan was organised around use and flow first, so that every finish decision that followed had a clear spatial logic to sit within. A restrained material and lighting palette was chosen deliberately, so the space reads as considered rather than decorated.",
+      "The result is a space organised around how it is actually used — movement, pause, and gathering — rather than around a fixed idea of how it should look. For us, it is one more attempt to bring sense and sensibility into balance — structure with clarity, material with warmth.",
+    ],
   },
   {
     id: "47",
@@ -658,6 +842,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Shahada"],
     color: "#c2bcc9",
+    paragraphs: [
+      "Madhavbhai Patil, completed in 2019 in Shahada, is an interior project built on the belief that a space is defined as much by how it is inhabited as by how it is built. A disciplined layout — zones, circulation, and sightlines resolved early — gives the interior its order, independent of the finishes applied to it. Material, lighting, and detail were considered at close range — the scale at which an interior is actually experienced, day after day.",
+      "Light, threshold, and material work together so the space is experienced as a sequence, not a single view. It stands as part of MJ Architects' ongoing exploration of how sense, sensibility, and space come together in the built environment.",
+    ],
   },
   {
     id: "48",
@@ -668,6 +856,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Nashik"],
     color: "#c9c4b6",
+    paragraphs: [
+      "In Nashik, Mr. Baviskar — completed in 2019 — is an interior designed around the particular use it was built to serve. Space planning came first — a clear organisation of use, movement, and privacy within the existing structure — before any material or finish was chosen. Texture, light, and a restrained material palette give the space its character, favouring quality of detail over decoration.",
+      "The space was designed to support its daily use first, with atmosphere and character following from that clarity of purpose. In the end, it is measured less by its elevation than by how naturally it has been taken up by the people who use it.",
+    ],
   },
   {
     id: "49",
@@ -678,6 +870,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Nashik"],
     color: "#b9c0b4",
+    paragraphs: [
+      "Dr. Vivek Patil occupies an existing structure in Nashik, completed in 2019, reworked from within to suit the life and use it now holds. The layout was resolved as a sequence of zones defined by use and light, giving the interior a legible order within its existing walls. Every finish and fixture was chosen for how it performs and feels over years of use, not just on the day of handover.",
+      "Every zone was designed around the specific task or moment it needed to hold, so the interior functions as intended long after the finishes are chosen. It reflects the studio's continuing pursuit of sense, sensibility, and space — order, depth, and life, brought together in one address.",
+    ],
   },
   {
     id: "50",
@@ -688,6 +884,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Nashik"],
     color: "#bcc2c9",
+    paragraphs: [
+      "Completed in 2019, Mahendra Patil in Nashik takes an existing shell as its starting point, reworking it from within rather than beginning from a blank site. Circulation and zoning were treated as the project's real structure, with finishes layered on only once that underlying order was clear. Light fittings, material joins, and finish transitions were resolved with the same care as the plan itself, since an interior is judged at arm's length.",
+      "The space is experienced as a sequence of moments — arrival, use, pause — rather than as a single composed view. Like all our work, it is built on the belief that architecture should be inhabited, not merely occupied.",
+    ],
   },
   {
     id: "51",
@@ -698,6 +898,10 @@ export const projects: Project[] = [
     category: "Interiors",
     tags: ["Interior Design", "Nashik"],
     color: "#c9b9ae",
+    paragraphs: [
+      "Sameer Patil, completed in 2018 in Nashik, treats the interior as its own design problem — distinct from, but disciplined by, the structure that contains it. The plan was organised around use and flow first, so that every finish decision that followed had a clear spatial logic to sit within. A restrained material and lighting palette was chosen deliberately, so the space reads as considered rather than decorated.",
+      "The result is a space organised around how it is actually used — movement, pause, and gathering — rather than around a fixed idea of how it should look. The result is a project that measures itself not only by how it looks, but by how it is lived in.",
+    ],
   },
 ];
 
