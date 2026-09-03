@@ -2,12 +2,14 @@
 
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import Image from "next/image";
 import Reveal from "./Reveal";
 
 const themes = [
   {
     num: "01",
     title: "Architecture Begins With Sense",
+    image: "/philosophy/01-sense.jpg",
     body: (
       <>
         <p className="mb-5">
@@ -36,6 +38,7 @@ const themes = [
   {
     num: "02",
     title: "Sensibility in Architecture",
+    image: "/philosophy/02-sensibility.jpg",
     body: (
       <>
         <p className="mb-5">
@@ -58,6 +61,7 @@ const themes = [
   {
     num: "03",
     title: "Space as Experience",
+    image: "/philosophy/03-space.jpg",
     body: (
       <>
         <p className="mb-5">
@@ -82,6 +86,7 @@ const themes = [
   {
     num: "04",
     title: "Between Structure and Life",
+    image: "/philosophy/04-structure.jpg",
     body: (
       <>
         <p className="mb-5">
@@ -106,6 +111,7 @@ const themes = [
   {
     num: "05",
     title: "Material & Time",
+    image: "/philosophy/05-material.jpg",
     body: (
       <>
         <p className="mb-5">
@@ -127,6 +133,7 @@ const themes = [
   {
     num: "06",
     title: "Context & Belonging",
+    image: "/philosophy/06-context.jpg",
     body: (
       <>
         <p className="mb-5">
@@ -149,6 +156,7 @@ const themes = [
   {
     num: "07",
     title: "Our Approach",
+    image: "/philosophy/07-approach.jpg",
     body: (
       <>
         <p className="mb-5">
@@ -170,6 +178,7 @@ const themes = [
   {
     num: "08",
     title: "A Practice of Balance",
+    image: "/philosophy/08-balance.jpg",
     body: (
       <>
         <p className="mb-5">
@@ -197,12 +206,12 @@ export default function Philosophy() {
   return (
     <section
       id="philosophy"
-      className="py-24 px-6 md:px-12"
+      className="py-28 md:py-36 px-6 md:px-12"
       style={{ background: "var(--background)" }}
     >
       <div className="max-w-[1600px] mx-auto">
         <Reveal>
-          <div className="max-w-3xl mb-20 md:mb-28">
+          <div className="max-w-3xl mb-24 md:mb-32">
             <p
               className="text-[12px] uppercase mb-8"
               style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
@@ -210,19 +219,19 @@ export default function Philosophy() {
               Our Philosophy
             </p>
             <h2
-              className="font-display uppercase mb-8"
+              className="font-display uppercase mb-10"
               style={{
                 color: "var(--foreground)",
                 fontSize: "clamp(1.75rem, 3.5vw, 3rem)",
                 letterSpacing: "-0.02em",
-                lineHeight: 1.1,
+                lineHeight: 1.15,
               }}
             >
               Understanding a place before intervening in it. Understanding
               people before designing for them. Understanding material
               before giving it form.
             </h2>
-            <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
+            <p className="text-lg leading-relaxed" style={{ color: "var(--muted)" }}>
               And understanding that space is not merely what surrounds us,
               but what shapes how we live, move, gather, pause, and
               experience.
@@ -237,7 +246,7 @@ export default function Philosophy() {
               <div key={theme.num} style={{ borderBottom: "1px solid var(--border)" }}>
                 <button
                   onClick={() => setOpenIndex(open ? null : i)}
-                  className="w-full text-left py-8 md:py-10 flex items-center gap-6 md:gap-10 group"
+                  className="w-full text-left py-9 md:py-11 flex items-center gap-6 md:gap-10 group"
                 >
                   <span
                     className="text-[13px] font-display shrink-0 w-10"
@@ -246,12 +255,13 @@ export default function Philosophy() {
                     {theme.num}
                   </span>
                   <span
-                    className="font-display uppercase flex-1"
+                    className="font-display uppercase flex-1 transition-opacity duration-300"
                     style={{
                       color: "var(--foreground)",
                       fontSize: "clamp(1.25rem, 2vw, 1.75rem)",
                       letterSpacing: "-0.01em",
                       lineHeight: 1.15,
+                      opacity: open ? 1 : 0.85,
                     }}
                   >
                     {theme.title}
@@ -273,11 +283,33 @@ export default function Philosophy() {
                       transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
                       className="overflow-hidden"
                     >
-                      <div
-                        className="pb-10 md:pb-12 pl-16 md:pl-20 text-base leading-relaxed max-w-2xl"
-                        style={{ color: "var(--muted)" }}
-                      >
-                        {theme.body}
+                      <div className="pb-14 md:pb-16 pl-0 md:pl-20 grid lg:grid-cols-12 gap-8 lg:gap-12">
+                        <div className="lg:col-span-5 order-1">
+                          <motion.div
+                            className="relative w-full aspect-[4/5] overflow-hidden"
+                            style={{ background: "var(--surface)" }}
+                          >
+                            <motion.div
+                              className="absolute inset-0"
+                              initial={{ scale: 1.08, opacity: 0 }}
+                              animate={{ scale: 1, opacity: 1 }}
+                              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+                            >
+                              <Image
+                                src={theme.image}
+                                alt={theme.title}
+                                fill
+                                className="object-cover"
+                              />
+                            </motion.div>
+                          </motion.div>
+                        </div>
+                        <div
+                          className="lg:col-span-7 order-2 text-base leading-relaxed max-w-2xl"
+                          style={{ color: "var(--muted)" }}
+                        >
+                          {theme.body}
+                        </div>
                       </div>
                     </motion.div>
                   )}
@@ -288,7 +320,7 @@ export default function Philosophy() {
         </div>
 
         <Reveal>
-          <div className="pt-20 md:pt-28 text-center">
+          <div className="pt-24 md:pt-32 text-center">
             <p
               className="font-display uppercase mb-10"
               style={{
