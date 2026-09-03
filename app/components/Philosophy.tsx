@@ -258,7 +258,7 @@ export default function Philosophy() {
                   </span>
                   <span
                     className="text-[12px] uppercase shrink-0 transition-colors duration-300"
-                    style={{ color: open ? "var(--accent)" : "var(--foreground)" }}
+                    style={{ color: "var(--foreground)" }}
                   >
                     {open ? "LESS −" : "MORE +"}
                   </span>

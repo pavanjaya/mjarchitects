@@ -55,7 +55,7 @@ export default function Navbar() {
                 href={link.href}
                 className="relative group text-[13px] uppercase font-display transition-colors duration-300 pb-1"
                 style={{
-                  color: isActive(link.href) ? "var(--accent)" : fg,
+                  color: fg,
                   letterSpacing: "-0.01em",
                 }}
               >
@@ -95,7 +95,7 @@ export default function Navbar() {
             href={link.href}
             onClick={() => setMenuOpen(false)}
             className="text-2xl uppercase font-display"
-            style={{ color: isActive(link.href) ? "var(--accent)" : "var(--foreground)" }}
+            style={{ color: "var(--foreground)" }}
           >
             {link.label}
           </Link>

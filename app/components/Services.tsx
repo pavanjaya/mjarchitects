@@ -103,7 +103,7 @@ export default function Services() {
                   </span>
                   <span
                     className="text-[12px] uppercase shrink-0 transition-colors duration-300"
-                    style={{ color: open ? "var(--accent)" : "var(--foreground)" }}
+                    style={{ color: "var(--foreground)" }}
                   >
                     {open ? "LESS −" : "MORE +"}
                   </span>
@@ -128,7 +128,7 @@ export default function Services() {
                         <div>
                           <p
                             className="text-[11px] uppercase mb-4"
-                            style={{ color: "var(--accent)", letterSpacing: "0.05em" }}
+                            style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
                           >
                             Includes
                           </p>
@@ -139,7 +139,7 @@ export default function Services() {
                                 className="text-sm flex items-center gap-3"
                                 style={{ color: "var(--foreground)" }}
                               >
-                                <span style={{ color: "var(--accent)" }}>—</span>
+                                <span style={{ color: "var(--foreground)" }}>—</span>
                                 {d}
                               </li>
                             ))}

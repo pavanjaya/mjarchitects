@@ -82,7 +82,7 @@ export default async function ProjectPage({
               <Reveal delay={0.1}>
                 <p
                   className="text-[12px] uppercase mb-4"
-                  style={{ color: "var(--accent)", letterSpacing: "0.05em" }}
+                  style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
                 >
                   {project.category} — {project.location}
                 </p>
@@ -159,7 +159,7 @@ export default async function ProjectPage({
           <div className="max-w-[1600px] mx-auto">
             <p
               className="text-[12px] uppercase mb-4"
-              style={{ color: "var(--accent)", letterSpacing: "0.05em" }}
+              style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
             >
               Next Project
             </p>

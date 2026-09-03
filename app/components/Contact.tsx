@@ -92,7 +92,7 @@ export default function Contact() {
                     <label
                       htmlFor={field.id}
                       className="block text-[11px] uppercase mb-3"
-                      style={{ color: "var(--accent)", letterSpacing: "0.05em" }}
+                      style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
                     >
                       {field.label}
                     </label>
@@ -118,7 +118,7 @@ export default function Contact() {
                   <label
                     htmlFor="message"
                     className="block text-[11px] uppercase mb-3"
-                    style={{ color: "var(--accent)", letterSpacing: "0.05em" }}
+                    style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
                   >
                     Message
                   </label>
@@ -177,7 +177,7 @@ export default function Contact() {
                   <a
                     href={`mailto:${office.email}`}
                     className="text-sm transition-colors duration-300"
-                    style={{ color: "var(--accent)" }}
+                    style={{ color: "var(--foreground)" }}
                   >
                     {office.email}
                   </a>

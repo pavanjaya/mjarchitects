@@ -245,7 +245,7 @@ export default function Studio() {
               <div key={item.label}>
                 <p
                   className="text-[11px] uppercase mb-2"
-                  style={{ color: "var(--accent)", letterSpacing: "0.05em" }}
+                  style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
                 >
                   {item.label}
                 </p>
