@@ -8,7 +8,6 @@ const socials = [
   { label: "Instagram", href: "https://www.instagram.com/themjarchitects/" },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/themjarchitects/" },
   { label: "Facebook", href: "https://www.facebook.com/mjarchitects.official" },
-  { label: "Archinect", href: "#" },
 ];
 
 export default function Footer() {

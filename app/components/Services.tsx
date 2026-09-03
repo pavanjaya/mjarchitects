@@ -103,12 +103,6 @@ function ServiceCard({ service }: { service: (typeof services)[number] }) {
         </motion.div>
       </div>
 
-      <span
-        className="block font-display mb-3"
-        style={{ color: "var(--muted)", fontSize: "13px" }}
-      >
-        {service.num}
-      </span>
       <h3
         className="font-display uppercase mb-4"
         style={{

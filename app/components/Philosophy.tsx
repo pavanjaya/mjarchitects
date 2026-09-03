@@ -244,17 +244,6 @@ function ThemeSection({
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
       >
-        <span
-          className="block font-display mb-6"
-          style={{
-            color: "var(--border)",
-            fontSize: "clamp(2.5rem, 5vw, 4rem)",
-            letterSpacing: "-0.02em",
-            lineHeight: 1,
-          }}
-        >
-          {theme.num}
-        </span>
         <h2
           className="font-display uppercase mb-6 max-w-lg"
           style={{
