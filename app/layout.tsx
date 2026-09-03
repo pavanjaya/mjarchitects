@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Preloader from "./components/motion/Preloader";
 import SmoothScroll from "./components/motion/SmoothScroll";
+import WhatsAppButton from "./components/WhatsAppButton";
 import "./globals.css";
 
 const grotesk = Archivo({
@@ -30,6 +31,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );
