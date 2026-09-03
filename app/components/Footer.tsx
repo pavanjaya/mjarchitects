@@ -15,13 +15,13 @@ export default function Footer() {
   return (
     <footer
       className="pt-20 pb-8 px-6 md:px-12"
-      style={{ background: "#B5533A" }}
+      style={{ background: "#8F4531" }}
     >
       <div className="max-w-[1600px] mx-auto">
         <h2
           className="font-display uppercase mb-16 md:mb-24"
           style={{
-            color: "var(--background)",
+            color: "#F3E8E1",
             fontSize: "clamp(2.5rem, 7vw, 6rem)",
             letterSpacing: "-0.03em",
             lineHeight: 0.95,

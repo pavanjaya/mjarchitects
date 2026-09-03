@@ -1,8 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+
+const AUTO_SLIDE_MS = 5000;
 
 export default function ProjectCarousel({
   images,
@@ -16,9 +19,19 @@ export default function ProjectCarousel({
   viewTransitionName?: string;
 }) {
   const [index, setIndex] = useState(0);
+  const [paused, setPaused] = useState(false);
 
   const prev = () => setIndex((i) => (i - 1 + images.length) % images.length);
   const next = () => setIndex((i) => (i + 1) % images.length);
+
+  const nextRef = useRef(next);
+  nextRef.current = next;
+
+  useEffect(() => {
+    if (images.length <= 1 || paused) return;
+    const id = setInterval(() => nextRef.current(), AUTO_SLIDE_MS);
+    return () => clearInterval(id);
+  }, [images.length, paused]);
 
   return (
     <div>
@@ -28,15 +41,28 @@ export default function ProjectCarousel({
           background: color,
           ...(viewTransitionName ? { viewTransitionName } : {}),
         } as React.CSSProperties}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
       >
         {images.length > 0 && (
-          <Image
-            src={images[index]}
-            alt={`${alt} — image ${index + 1} of ${images.length}`}
-            fill
-            priority
-            className="object-contain"
-          />
+          <AnimatePresence initial={false} mode="sync">
+            <motion.div
+              key={images[index]}
+              className="absolute inset-0"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+            >
+              <Image
+                src={images[index]}
+                alt={`${alt} — image ${index + 1} of ${images.length}`}
+                fill
+                priority
+                className="object-contain"
+              />
+            </motion.div>
+          </AnimatePresence>
         )}
 
         {images.length > 1 && (
@@ -57,7 +83,7 @@ export default function ProjectCarousel({
             >
               <ChevronRight size={18} />
             </button>
-            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2">
+            <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-2 z-10">
               {images.map((_, i) => (
                 <button
                   key={i}
