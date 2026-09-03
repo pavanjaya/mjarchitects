@@ -8,6 +8,7 @@ export type Project = {
   tags: string[];
   color: string;
   image?: string;
+  images?: string[];
   builtUp?: string;
   description?: string;
   paragraphs?: string[];
@@ -23,7 +24,13 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#b9c0b4",
-    image: "/projects/apartments/raj-crest.jpg",
+    image: "/projects/apartments/raj-crest/01.jpg",
+    images: [
+      "/projects/apartments/raj-crest/01.jpg",
+      "/projects/apartments/raj-crest/02.jpg",
+      "/projects/apartments/raj-crest/03.jpg",
+      "/projects/apartments/raj-crest/04.png",
+    ],
     builtUp: "13,355 sqm",
   },
   {
@@ -35,7 +42,15 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#bcc2c9",
-    image: "/projects/apartments/shankar-nagar.jpg",
+    image: "/projects/apartments/shankar-nagar/01.jpg",
+    images: [
+      "/projects/apartments/shankar-nagar/01.jpg",
+      "/projects/apartments/shankar-nagar/02.jpg",
+      "/projects/apartments/shankar-nagar/03.jpg",
+      "/projects/apartments/shankar-nagar/04.jpg",
+      "/projects/apartments/shankar-nagar/05.png",
+      "/projects/apartments/shankar-nagar/06.png",
+    ],
     builtUp: "27,599 sqm",
   },
   {
@@ -47,7 +62,14 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#c9b9ae",
-    image: "/projects/apartments/raj-tower.jpg",
+    image: "/projects/apartments/raj-tower/01.jpg",
+    images: [
+      "/projects/apartments/raj-tower/01.jpg",
+      "/projects/apartments/raj-tower/02.jpg",
+      "/projects/apartments/raj-tower/03.jpg",
+      "/projects/apartments/raj-tower/04.png",
+      "/projects/apartments/raj-tower/05.png",
+    ],
     builtUp: "8,776 sqm",
   },
   {
@@ -59,7 +81,13 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#b8c7c9",
-    image: "/projects/apartments/ambar-arcade.jpg",
+    image: "/projects/apartments/ambar-arcade/01.jpg",
+    images: [
+      "/projects/apartments/ambar-arcade/01.jpg",
+      "/projects/apartments/ambar-arcade/02.jpg",
+      "/projects/apartments/ambar-arcade/03.png",
+      "/projects/apartments/ambar-arcade/04.png",
+    ],
     builtUp: "7,772 sqm",
   },
   {
@@ -71,7 +99,15 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#c2bcc9",
-    image: "/projects/apartments/pandav-enclave.jpg",
+    image: "/projects/apartments/pandav-enclave/01.jpg",
+    images: [
+      "/projects/apartments/pandav-enclave/01.jpg",
+      "/projects/apartments/pandav-enclave/02.jpg",
+      "/projects/apartments/pandav-enclave/03.jpg",
+      "/projects/apartments/pandav-enclave/04.jpg",
+      "/projects/apartments/pandav-enclave/05.png",
+      "/projects/apartments/pandav-enclave/06.png",
+    ],
     builtUp: "8,846 sqm",
   },
   {
@@ -83,7 +119,14 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#c9c4b6",
-    image: "/projects/apartments/prathmesh-park.jpg",
+    image: "/projects/apartments/prathmesh-park/01.jpg",
+    images: [
+      "/projects/apartments/prathmesh-park/01.jpg",
+      "/projects/apartments/prathmesh-park/02.jpg",
+      "/projects/apartments/prathmesh-park/03.jpg",
+      "/projects/apartments/prathmesh-park/04.png",
+      "/projects/apartments/prathmesh-park/05.png",
+    ],
     builtUp: "7,977 sqm",
   },
   {
@@ -95,7 +138,13 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#b9c0b4",
-    image: "/projects/apartments/mhada-satpur.jpg",
+    image: "/projects/apartments/mhada-satpur/01.jpg",
+    images: [
+      "/projects/apartments/mhada-satpur/01.jpg",
+      "/projects/apartments/mhada-satpur/02.jpg",
+      "/projects/apartments/mhada-satpur/03.png",
+      "/projects/apartments/mhada-satpur/04.png",
+    ],
     builtUp: "4,953 sqm",
   },
   {
@@ -107,7 +156,12 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#bcc2c9",
-    image: "/projects/apartments/cosmos-chember.jpg",
+    image: "/projects/apartments/cosmos-chember/01.jpg",
+    images: [
+      "/projects/apartments/cosmos-chember/01.jpg",
+      "/projects/apartments/cosmos-chember/02.png",
+      "/projects/apartments/cosmos-chember/03.png",
+    ],
     builtUp: "7,473 sqm",
   },
   {
@@ -119,7 +173,14 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Igatpuri"],
     color: "#c9b9ae",
-    image: "/projects/apartments/vintage-valley.jpg",
+    image: "/projects/apartments/vintage-valley/01.jpg",
+    images: [
+      "/projects/apartments/vintage-valley/01.jpg",
+      "/projects/apartments/vintage-valley/02.jpg",
+      "/projects/apartments/vintage-valley/03.png",
+      "/projects/apartments/vintage-valley/04.png",
+      "/projects/apartments/vintage-valley/05.png",
+    ],
     builtUp: "6,985 sqm",
   },
   {
@@ -131,7 +192,13 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#b8c7c9",
-    image: "/projects/apartments/krishnai-galaxy.jpg",
+    image: "/projects/apartments/krishnai-galaxy/01.jpg",
+    images: [
+      "/projects/apartments/krishnai-galaxy/01.jpg",
+      "/projects/apartments/krishnai-galaxy/02.jpg",
+      "/projects/apartments/krishnai-galaxy/03.jpg",
+      "/projects/apartments/krishnai-galaxy/04.png",
+    ],
     builtUp: "3,847 sqm",
   },
   {
@@ -143,7 +210,13 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#c2bcc9",
-    image: "/projects/apartments/natures-pride.jpg",
+    image: "/projects/apartments/natures-pride/01.jpg",
+    images: [
+      "/projects/apartments/natures-pride/01.jpg",
+      "/projects/apartments/natures-pride/02.jpg",
+      "/projects/apartments/natures-pride/03.png",
+      "/projects/apartments/natures-pride/04.png",
+    ],
     builtUp: "2,249 sqm",
   },
   {
@@ -155,7 +228,12 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#c9c4b6",
-    image: "/projects/apartments/indu-park.jpg",
+    image: "/projects/apartments/indu-park/01.jpg",
+    images: [
+      "/projects/apartments/indu-park/01.jpg",
+      "/projects/apartments/indu-park/02.png",
+      "/projects/apartments/indu-park/03.png",
+    ],
     builtUp: "2,175 sqm",
   },
   {
@@ -167,7 +245,13 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#b9c0b4",
-    image: "/projects/apartments/shri-ravi-enclave.jpg",
+    image: "/projects/apartments/shri-ravi-enclave/01.jpg",
+    images: [
+      "/projects/apartments/shri-ravi-enclave/01.jpg",
+      "/projects/apartments/shri-ravi-enclave/02.jpg",
+      "/projects/apartments/shri-ravi-enclave/03.jpg",
+      "/projects/apartments/shri-ravi-enclave/04.png",
+    ],
     builtUp: "4,849 sqm",
   },
   {
@@ -179,7 +263,14 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#bcc2c9",
-    image: "/projects/apartments/aakar-beyond.jpg",
+    image: "/projects/apartments/aakar-beyond/01.jpg",
+    images: [
+      "/projects/apartments/aakar-beyond/01.jpg",
+      "/projects/apartments/aakar-beyond/02.jpg",
+      "/projects/apartments/aakar-beyond/03.jpg",
+      "/projects/apartments/aakar-beyond/04.png",
+      "/projects/apartments/aakar-beyond/05.png",
+    ],
     builtUp: "2,481 sqm",
   },
   {
@@ -191,7 +282,12 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#c9b9ae",
-    image: "/projects/apartments/parkside-palms.jpg",
+    image: "/projects/apartments/parkside-palms/01.jpg",
+    images: [
+      "/projects/apartments/parkside-palms/01.jpg",
+      "/projects/apartments/parkside-palms/02.png",
+      "/projects/apartments/parkside-palms/03.png",
+    ],
     builtUp: "3,109 sqm",
   },
   {
@@ -203,7 +299,12 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#b8c7c9",
-    image: "/projects/apartments/paramkaruna-apartment.jpg",
+    image: "/projects/apartments/paramkaruna-apartment/01.jpg",
+    images: [
+      "/projects/apartments/paramkaruna-apartment/01.jpg",
+      "/projects/apartments/paramkaruna-apartment/02.png",
+      "/projects/apartments/paramkaruna-apartment/03.png",
+    ],
     builtUp: "1,051 sqm",
   },
   {
@@ -215,7 +316,13 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#c2bcc9",
-    image: "/projects/apartments/garden-view-apartment.jpg",
+    image: "/projects/apartments/garden-view-apartment/01.jpg",
+    images: [
+      "/projects/apartments/garden-view-apartment/01.jpg",
+      "/projects/apartments/garden-view-apartment/02.jpg",
+      "/projects/apartments/garden-view-apartment/03.png",
+      "/projects/apartments/garden-view-apartment/04.png",
+    ],
     builtUp: "1,065 sqm",
   },
   {
@@ -227,7 +334,12 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Nashik"],
     color: "#c9c4b6",
-    image: "/projects/apartments/rukmini-park.jpg",
+    image: "/projects/apartments/rukmini-park/01.jpg",
+    images: [
+      "/projects/apartments/rukmini-park/01.jpg",
+      "/projects/apartments/rukmini-park/02.png",
+      "/projects/apartments/rukmini-park/03.png",
+    ],
     builtUp: "560 sqm",
   },
   {
@@ -239,7 +351,14 @@ export const projects: Project[] = [
     category: "Residential",
     tags: ["Apartment", "Pandharpur"],
     color: "#b9c0b4",
-    image: "/projects/apartments/shrishti-pandhari.jpg",
+    image: "/projects/apartments/shrishti-pandhari/01.jpg",
+    images: [
+      "/projects/apartments/shrishti-pandhari/01.jpg",
+      "/projects/apartments/shrishti-pandhari/02.jpg",
+      "/projects/apartments/shrishti-pandhari/03.jpg",
+      "/projects/apartments/shrishti-pandhari/04.jpg",
+      "/projects/apartments/shrishti-pandhari/05.jpg",
+    ],
     builtUp: "7,432 sqm",
   },
   {

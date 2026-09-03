@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import Reveal from "../../components/Reveal";
+import ProjectCarousel from "../../components/ProjectCarousel";
 import { projects, getProjectBySlug } from "../../lib/projects";
 
 function article(word: string) {
@@ -95,23 +95,12 @@ export default async function ProjectPage({
       <section className="px-6 md:px-12 pb-16 md:pb-24">
         <div className="max-w-[1600px] mx-auto">
           <Reveal>
-            <div
-              className="relative w-full aspect-[16/9] overflow-hidden"
-              style={{
-                background: project.color,
-                viewTransitionName: `project-image-${project.slug}`,
-              } as React.CSSProperties}
-            >
-              {project.image && (
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  fill
-                  priority
-                  className="object-cover"
-                />
-              )}
-            </div>
+            <ProjectCarousel
+              images={project.images ?? (project.image ? [project.image] : [])}
+              alt={project.name}
+              color={project.color}
+              viewTransitionName={`project-image-${project.slug}`}
+            />
           </Reveal>
         </div>
       </section>
