@@ -47,24 +47,18 @@ export default async function ProjectPage({
 
   return (
     <>
-      <section className="pt-40 pb-12 px-6 md:px-12">
+      <section className="pt-28 pb-12 px-6 md:px-12">
         <div className="max-w-[1600px] mx-auto">
           <Reveal>
             <Link
               href="/work"
-              className="text-[12px] uppercase inline-block mb-10 transition-colors duration-300"
+              className="text-[12px] uppercase inline-block mb-6 transition-colors duration-300"
               style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
             >
               ← All Work
             </Link>
-            <p
-              className="text-[12px] uppercase mb-6"
-              style={{ color: "var(--muted)", letterSpacing: "-0.01em" }}
-            >
-              {project.tags.join(" — ")}
-            </p>
             <h1
-              className="font-display uppercase mb-8"
+              className="font-display uppercase mb-6"
               style={{
                 color: "var(--foreground)",
                 fontSize: "clamp(2.25rem, 6vw, 5rem)",
