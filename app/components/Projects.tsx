@@ -1,28 +1,15 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { useState } from "react";
 import Reveal from "./Reveal";
 import PillCTA from "./PillCTA";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../lib/projects";
 
-const categories = ["Apartments", "Residential Bungalows", "Interiors"];
+const categories = ["All", "Apartments", "Residential Bungalows", "Interiors"];
 
 export default function Projects({ featured = false }: { featured?: boolean }) {
   const [activeCategory, setActiveCategory] = useState("All");
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleClick = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
-  }, []);
 
   const filtered = featured
     ? projects.slice(0, 4)
@@ -50,71 +37,25 @@ export default function Projects({ featured = false }: { featured?: boolean }) {
 
             {/* Filter */}
             {!featured && (
-              <div className="flex items-center gap-6">
-                <button
-                  onClick={() => {
-                    setActiveCategory("All");
-                    setDropdownOpen(false);
-                  }}
-                  className="text-[13px] uppercase font-display transition-colors duration-300"
-                  style={{
-                    color: activeCategory === "All" ? "var(--foreground)" : "var(--muted)",
-                    letterSpacing: "-0.01em",
-                    borderBottom:
-                      activeCategory === "All"
-                        ? "1px solid var(--foreground)"
-                        : "1px solid transparent",
-                  }}
-                >
-                  All
-                </button>
-
-                <div className="relative" ref={dropdownRef}>
+              <div className="flex flex-wrap gap-6">
+                {categories.map((cat) => (
                   <button
-                    onClick={() => setDropdownOpen((o) => !o)}
-                    className="flex items-center gap-2 text-[13px] uppercase font-display transition-colors duration-300"
+                    key={cat}
+                    onClick={() => setActiveCategory(cat)}
+                    className="text-[13px] uppercase font-display transition-colors duration-300"
                     style={{
-                      color: activeCategory !== "All" ? "var(--foreground)" : "var(--muted)",
+                      color:
+                        activeCategory === cat ? "var(--foreground)" : "var(--muted)",
                       letterSpacing: "-0.01em",
                       borderBottom:
-                        activeCategory !== "All"
+                        activeCategory === cat
                           ? "1px solid var(--foreground)"
                           : "1px solid transparent",
                     }}
                   >
-                    {activeCategory === "All" ? "Category" : activeCategory}
-                    <ChevronDown
-                      size={14}
-                      style={{
-                        transform: dropdownOpen ? "rotate(180deg)" : "none",
-                        transition: "transform 0.3s ease",
-                      }}
-                    />
+                    {cat}
                   </button>
-
-                  {dropdownOpen && (
-                    <div
-                      className="absolute right-0 top-full mt-3 py-2 min-w-[180px] z-10"
-                      style={{ background: "var(--background)", border: "1px solid var(--border)" }}
-                    >
-                      {categories.map((cat) => (
-                        <button
-                          key={cat}
-                          onClick={() => {
-                            setActiveCategory(cat);
-                            setDropdownOpen(false);
-                          }}
-                          className="block w-full text-left px-5 py-2.5 text-[13px] uppercase font-display transition-colors duration-200"
-                          style={{
-                            color: activeCategory === cat ? "var(--foreground)" : "var(--muted)",
-                          }}
-                        >
-                          {cat}
-                        </button>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                ))}
               </div>
             )}
           </div>
