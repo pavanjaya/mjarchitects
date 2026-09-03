@@ -67,27 +67,35 @@ function StepRow({ step, isLast }: { step: (typeof steps)[number]; isLast: boole
   const inView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <div ref={ref} className="flex gap-6 md:gap-12">
-      {/* Rail */}
-      <div className="flex flex-col items-center shrink-0">
-        <motion.div
-          className="rounded-full flex items-center justify-center font-display shrink-0"
-          style={{
-            width: "clamp(3rem, 5vw, 4.5rem)",
-            height: "clamp(3rem, 5vw, 4.5rem)",
-            border: "1px solid var(--foreground)",
-            color: "var(--foreground)",
-            background: "var(--surface)",
-            fontSize: "clamp(0.9rem, 1.2vw, 1.1rem)",
-          }}
-          initial={{ scale: 0.85, opacity: 0 }}
-          animate={inView ? { scale: 1, opacity: 1 } : {}}
-          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+    <div ref={ref} className="flex gap-5 sm:gap-8 md:gap-10">
+      {/* Thumbnail */}
+      <div className="w-24 sm:w-32 md:w-40 shrink-0">
+        <div
+          className="relative w-full aspect-square overflow-hidden"
+          style={{ background: "var(--background)" }}
         >
-          {step.num}
-        </motion.div>
+          <motion.div
+            className="absolute inset-0"
+            initial={{ scale: 1.08, opacity: 0 }}
+            animate={inView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Image src={step.image} alt={step.title} fill className="object-cover" />
+          </motion.div>
+        </div>
+      </div>
+
+      {/* Rail */}
+      <div className="flex flex-col items-center shrink-0 self-stretch">
+        <motion.span
+          className="block shrink-0 mt-3"
+          style={{ width: 7, height: 7, background: "var(--foreground)" }}
+          initial={{ scale: 0 }}
+          animate={inView ? { scale: 1 } : {}}
+          transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+        />
         {!isLast && (
-          <div className="relative w-px flex-1 mt-2 overflow-hidden" style={{ background: "var(--border)" }}>
+          <div className="relative w-px flex-1 mt-3" style={{ background: "var(--border)" }}>
             <motion.div
               className="absolute inset-x-0 top-0 w-px"
               style={{ background: "var(--foreground)" }}
@@ -101,71 +109,36 @@ function StepRow({ step, isLast }: { step: (typeof steps)[number]; isLast: boole
 
       {/* Content */}
       <motion.div
-        className="flex-1 pb-20 md:pb-28"
-        initial={{ opacity: 0, y: 24 }}
+        className="flex-1 pb-16 md:pb-20"
+        initial={{ opacity: 0, y: 16 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
       >
-        <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 mb-6">
-          <h3
-            className="font-display uppercase"
-            style={{
-              color: "var(--foreground)",
-              fontSize: "clamp(1.25rem, 2.5vw, 2rem)",
-              letterSpacing: "-0.02em",
-            }}
-          >
-            {step.title}
-          </h3>
-          <span
-            className="text-[12px] uppercase"
-            style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
-          >
-            {step.duration}
-          </span>
-        </div>
-
-        <div
-          className="relative w-full aspect-[21/9] overflow-hidden mb-8"
-          style={{ background: "var(--background)" }}
+        <h3
+          className="font-display uppercase mb-2"
+          style={{
+            color: "var(--foreground)",
+            fontSize: "clamp(1.1rem, 2vw, 1.5rem)",
+            letterSpacing: "-0.01em",
+          }}
         >
-          <motion.div
-            className="absolute inset-0"
-            initial={{ scale: 1.08, opacity: 0 }}
-            animate={inView ? { scale: 1, opacity: 1 } : {}}
-            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <Image src={step.image} alt={step.title} fill className="object-cover" />
-          </motion.div>
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
-          <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
-            {step.description}
-          </p>
-          <div>
-            <p
-              className="text-[11px] uppercase mb-4"
-              style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
-            >
-              Deliverables
-            </p>
-            <div className="flex flex-wrap gap-2">
-              {step.deliverables.map((d) => (
-                <span
-                  key={d}
-                  className="text-[12px] px-3 py-1.5"
-                  style={{
-                    color: "var(--foreground)",
-                    border: "1px solid var(--border)",
-                  }}
-                >
-                  {d}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
+          {step.num} — {step.title}
+        </h3>
+        <p
+          className="text-[12px] uppercase mb-4"
+          style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
+        >
+          {step.duration}
+        </p>
+        <p
+          className="text-[15px] leading-relaxed max-w-xl mb-4"
+          style={{ color: "var(--muted)" }}
+        >
+          {step.description}
+        </p>
+        <p className="text-[13px] leading-relaxed max-w-xl" style={{ color: "var(--foreground)" }}>
+          {step.deliverables.join(" · ")}
+        </p>
       </motion.div>
     </div>
   );
