@@ -45,111 +45,115 @@ export default async function ProjectPage({
   const index = projects.findIndex((p) => p.slug === slug);
   const next = projects[(index + 1) % projects.length];
 
+  const facts = [
+    { label: "Location", value: project.location },
+    { label: "Year", value: project.year },
+    { label: "Category", value: project.category },
+    ...(project.builtUp ? [{ label: "Built-up Area", value: project.builtUp }] : []),
+    { label: "Scope", value: project.tags.join(", ") },
+  ];
+
+  const bodyParagraphs =
+    project.paragraphs ?? [
+      `${capitalize(article(project.category))} ${project.category.toLowerCase()} project in ${project.location}, completed in ${project.year}${
+        project.builtUp ? ` with a built-up area of ${project.builtUp}` : ""
+      }.`,
+    ];
+
   return (
     <>
-      <section className="pt-28 pb-12 px-6 md:px-12">
+      <section className="pt-28 pb-24 px-6 md:px-12">
         <div className="max-w-[1600px] mx-auto">
           <Reveal>
             <Link
               href="/work"
-              className="text-[12px] uppercase inline-block mb-6 transition-colors duration-300"
+              className="text-[12px] uppercase inline-block mb-10 transition-colors duration-300"
               style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
             >
               ← All Work
             </Link>
-            <h1
-              className="font-display uppercase mb-6"
-              style={{
-                color: "var(--foreground)",
-                fontSize: "clamp(2.25rem, 6vw, 5rem)",
-                letterSpacing: "-0.03em",
-                lineHeight: 0.98,
-              }}
-            >
-              {project.name}
-            </h1>
-            <div className="flex gap-10">
-              <p
-                className="text-[13px] uppercase"
-                style={{ color: "var(--accent)", letterSpacing: "0.05em" }}
-              >
-                {project.location}
-              </p>
-              <p
-                className="text-[13px] uppercase"
-                style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
-              >
-                {project.year}
-              </p>
+          </Reveal>
+
+          <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
+            {/* Image — 8 cols */}
+            <div className="lg:col-span-8">
+              <Reveal>
+                <ProjectCarousel
+                  images={project.images ?? (project.image ? [project.image] : [])}
+                  alt={project.name}
+                  color={project.color}
+                  viewTransitionName={`project-image-${project.slug}`}
+                />
+              </Reveal>
             </div>
-          </Reveal>
-        </div>
-      </section>
 
-      <section className="px-6 md:px-12 pb-16 md:pb-24">
-        <div className="max-w-[1600px] mx-auto">
-          <Reveal>
-            <ProjectCarousel
-              images={project.images ?? (project.image ? [project.image] : [])}
-              alt={project.name}
-              color={project.color}
-              viewTransitionName={`project-image-${project.slug}`}
-            />
-          </Reveal>
-        </div>
-      </section>
-
-      <section className="pb-24 px-6 md:px-12">
-        <div className="max-w-[1600px] mx-auto grid lg:grid-cols-[2fr_1fr] gap-16">
-          <Reveal>
-            <div className="max-w-2xl space-y-6">
-              {(
-                project.paragraphs ?? [
-                  `${capitalize(article(project.category))} ${project.category.toLowerCase()} project in ${project.location}, completed in ${project.year}${
-                    project.builtUp ? ` with a built-up area of ${project.builtUp}` : ""
-                  }.`,
-                ]
-              ).map((p, i) => (
+            {/* Content — 4 cols */}
+            <div className="lg:col-span-4">
+              <Reveal delay={0.1}>
                 <p
-                  key={i}
-                  className="text-base leading-relaxed"
-                  style={{ color: "var(--muted)" }}
+                  className="text-[12px] uppercase mb-4"
+                  style={{ color: "var(--accent)", letterSpacing: "0.05em" }}
                 >
-                  {p}
+                  {project.category} — {project.location}
                 </p>
-              ))}
-            </div>
-          </Reveal>
+                <h1
+                  className="font-display uppercase mb-12"
+                  style={{
+                    color: "var(--foreground)",
+                    fontSize: "clamp(1.75rem, 3vw, 2.75rem)",
+                    letterSpacing: "-0.02em",
+                    lineHeight: 1.05,
+                  }}
+                >
+                  {project.name}
+                </h1>
 
-          <Reveal delay={0.1}>
-            <div
-              className="grid grid-cols-2 lg:grid-cols-1 gap-8 pt-8"
-              style={{ borderTop: "1px solid var(--border)" }}
-            >
-              {[
-                { label: "Location", value: project.location },
-                { label: "Year", value: project.year },
-                { label: "Category", value: project.category },
-                ...(project.builtUp ? [{ label: "Built-up Area", value: project.builtUp }] : []),
-                { label: "Scope", value: project.tags.join(", ") },
-              ].map((item) => (
-                <div key={item.label}>
-                  <p
-                    className="text-[11px] uppercase mb-2"
-                    style={{ color: "var(--accent)", letterSpacing: "0.05em" }}
-                  >
-                    {item.label}
-                  </p>
-                  <p
-                    className="text-sm font-display"
-                    style={{ color: "var(--foreground)" }}
-                  >
-                    {item.value}
-                  </p>
+                <p
+                  className="text-[11px] uppercase mb-4"
+                  style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
+                >
+                  About the Project
+                </p>
+                <div className="space-y-4 mb-12">
+                  {bodyParagraphs.map((p, i) => (
+                    <p
+                      key={i}
+                      className="text-sm leading-relaxed"
+                      style={{ color: "var(--muted)" }}
+                    >
+                      {p}
+                    </p>
+                  ))}
                 </div>
-              ))}
+
+                <p
+                  className="text-[11px] uppercase mb-2"
+                  style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
+                >
+                  Project Details
+                </p>
+                <div style={{ borderTop: "1px solid var(--border)" }}>
+                  {facts.map((item) => (
+                    <div
+                      key={item.label}
+                      className="py-4"
+                      style={{ borderBottom: "1px solid var(--border)" }}
+                    >
+                      <p
+                        className="text-sm font-display mb-1"
+                        style={{ color: "var(--foreground)" }}
+                      >
+                        {item.label}
+                      </p>
+                      <p className="text-sm" style={{ color: "var(--muted)" }}>
+                        {item.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
