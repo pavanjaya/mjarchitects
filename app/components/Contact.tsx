@@ -7,7 +7,7 @@ const offices = [
   {
     city: "Nashik",
     address: "1, Janaki, Architect Colony, Gangapur Road\nNashik, Maharashtra 422013",
-    phone: "+91 22 6600 1400",
+    phone: "+91 97666 40399",
     email: "hello@mjarchitects.co",
   },
 ];

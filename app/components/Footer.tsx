@@ -46,11 +46,11 @@ export default function Footer() {
               />
             </a>
             <a
-              href="tel:+912266001400"
+              href="tel:+919766640399"
               className="relative group inline-flex items-center gap-3 font-display uppercase mb-10 pb-1"
               style={{ color: "var(--background)", fontSize: "clamp(1.125rem, 2vw, 1.5rem)", letterSpacing: "-0.01em" }}
             >
-              +91 22 6600 1400
+              +91 97666 40399
               <ArrowRight size={20} />
               <span
                 className="absolute left-0 -bottom-0 h-px w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
