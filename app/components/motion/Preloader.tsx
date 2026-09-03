@@ -2,12 +2,46 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import LogoMark from "../LogoMark";
 
 const SESSION_KEY = "mj-preloaded";
 
+function AnimatedMark() {
+  return (
+    <svg
+      viewBox="0 0 420 241"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className="h-10 md:h-12 w-auto"
+    >
+      <motion.path
+        d="M1.04986e-05 4.19629e-05L1.0485e-05 240.066L59.9232 240.066L59.9232 60.0327L119.879 60.0327L119.879 240.066L179.802 240.066L179.802 60.0005L239.757 60.0005L239.757 4.19494e-05L1.04986e-05 4.19629e-05Z"
+        fill="currentColor"
+        initial={{ opacity: 0, x: -14 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      />
+      <motion.path
+        d="M299.707 60.0327L299.707 4.19629e-05L419.585 4.19561e-05L419.585 240.099L299.675 240.099L299.675 180.066L359.662 180.066L359.662 60.0327L299.707 60.0327Z"
+        fill="currentColor"
+        initial={{ opacity: 0, x: 14 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.6, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+      />
+      <motion.rect
+        x="239.743"
+        y="90.0301"
+        width="59.9232"
+        height="90.0329"
+        fill="currentColor"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0.25, 1, 0.25] }}
+        transition={{ duration: 1.3, delay: 0.4, repeat: Infinity, ease: "easeInOut" }}
+      />
+    </svg>
+  );
+}
+
 export default function Preloader() {
-  const [progress, setProgress] = useState(0);
   const [done, setDone] = useState(false);
 
   useEffect(() => {
@@ -27,31 +61,17 @@ export default function Preloader() {
     }
 
     document.body.style.overflow = "hidden";
-    const start = performance.now();
-    const duration = 1100;
-    let raf: number;
-
-    const tick = (t: number) => {
-      const elapsed = t - start;
-      const pct = Math.min(100, Math.round((elapsed / duration) * 100));
-      setProgress(pct);
-      if (pct < 100) {
-        raf = requestAnimationFrame(tick);
-      } else {
-        setTimeout(() => {
-          setDone(true);
-          document.body.style.overflow = "";
-          try {
-            sessionStorage.setItem(SESSION_KEY, "1");
-          } catch {
-            // ignore
-          }
-        }, 120);
+    const id = setTimeout(() => {
+      setDone(true);
+      document.body.style.overflow = "";
+      try {
+        sessionStorage.setItem(SESSION_KEY, "1");
+      } catch {
+        // ignore
       }
-    };
+    }, 1400);
 
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
+    return () => clearTimeout(id);
   }, []);
 
   return (
@@ -64,38 +84,11 @@ export default function Preloader() {
           transition={{ duration: 0.6, ease: [0.65, 0, 0.35, 1] }}
         >
           <motion.div
-            className="flex flex-col items-center gap-6"
             exit={{ y: -16, opacity: 0 }}
             transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+            style={{ color: "var(--foreground)" }}
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-              style={{ color: "var(--foreground)" }}
-            >
-              <LogoMark className="h-10 md:h-12 w-auto" />
-            </motion.div>
-
-            <div className="flex items-center gap-4 md:gap-6">
-              <span
-                style={{
-                  width: "clamp(48px, 8vw, 96px)",
-                  height: 1,
-                  background: "var(--border)",
-                }}
-              />
-              <span
-                className="font-display tabular-nums"
-                style={{
-                  fontSize: "clamp(1rem, 2vw, 1.4rem)",
-                  color: "var(--muted)",
-                  minWidth: "3ch",
-                }}
-              >
-                {progress}%
-              </span>
-            </div>
+            <AnimatedMark />
           </motion.div>
         </motion.div>
       )}
