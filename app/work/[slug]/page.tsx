@@ -64,16 +64,6 @@ export default async function ProjectPage({
     <>
       <section className="pt-28 pb-24 px-6 md:px-12">
         <div className="max-w-[1600px] mx-auto">
-          <Reveal>
-            <Link
-              href="/work"
-              className="text-[12px] uppercase inline-block mb-10 transition-colors duration-300"
-              style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
-            >
-              ← All Work
-            </Link>
-          </Reveal>
-
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             {/* Image — 8 cols */}
             <div className="lg:col-span-8">
