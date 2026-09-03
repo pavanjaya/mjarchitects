@@ -5,6 +5,14 @@ import { notFound } from "next/navigation";
 import Reveal from "../../components/Reveal";
 import { projects, getProjectBySlug } from "../../lib/projects";
 
+function article(word: string) {
+  return /^[aeiou]/i.test(word) ? "an" : "a";
+}
+
+function capitalize(word: string) {
+  return word.charAt(0).toUpperCase() + word.slice(1);
+}
+
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
 }
@@ -19,7 +27,9 @@ export async function generateMetadata({
   if (!project) return {};
   return {
     title: `${project.name} — MJ Architect`,
-    description: project.description,
+    description:
+      project.description ??
+      `${project.name} — ${article(project.category)} ${project.category.toLowerCase()} project in ${project.location}, ${project.year}.`,
   };
 }
 
@@ -110,7 +120,13 @@ export default async function ProjectPage({
         <div className="max-w-[1600px] mx-auto grid lg:grid-cols-[2fr_1fr] gap-16">
           <Reveal>
             <div className="max-w-2xl space-y-6">
-              {project.paragraphs.map((p, i) => (
+              {(
+                project.paragraphs ?? [
+                  `${capitalize(article(project.category))} ${project.category.toLowerCase()} project in ${project.location}, completed in ${project.year}${
+                    project.builtUp ? ` with a built-up area of ${project.builtUp}` : ""
+                  }.`,
+                ]
+              ).map((p, i) => (
                 <p
                   key={i}
                   className="text-base leading-relaxed"
@@ -131,6 +147,7 @@ export default async function ProjectPage({
                 { label: "Location", value: project.location },
                 { label: "Year", value: project.year },
                 { label: "Category", value: project.category },
+                ...(project.builtUp ? [{ label: "Built-up Area", value: project.builtUp }] : []),
                 { label: "Scope", value: project.tags.join(", ") },
               ].map((item) => (
                 <div key={item.label}>

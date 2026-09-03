@@ -34,7 +34,7 @@ export default function Hero() {
         >
           <Image
             src="/hero-building.png"
-            alt="MJ Architect — The Meridian Tower"
+            alt="MJ Architects — residential tower project"
             fill
             priority
             className="object-cover"

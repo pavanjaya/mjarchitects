@@ -7,7 +7,7 @@ import PillCTA from "./PillCTA";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../lib/projects";
 
-const categories = ["Industrial", "Residential", "Commercial", "Healthcare", "Institutional", "Hospitality"];
+const categories = ["Industrial", "Residential", "Commercial", "Healthcare", "Institutional", "Hospitality", "Interiors"];
 
 export default function Projects({ featured = false }: { featured?: boolean }) {
   const [activeCategory, setActiveCategory] = useState("All");
