@@ -132,11 +132,14 @@ export default async function ProjectPage({
                 >
                   Project Details
                 </p>
-                <div style={{ borderTop: "1px solid var(--border)" }}>
+                <div
+                  className="grid grid-cols-2 gap-x-8"
+                  style={{ borderTop: "1px solid var(--border)" }}
+                >
                   {facts.map((item) => (
                     <div
                       key={item.label}
-                      className="py-4"
+                      className={`py-4 ${item.label === "Scope" ? "col-span-2" : ""}`}
                       style={{ borderBottom: "1px solid var(--border)" }}
                     >
                       <p
