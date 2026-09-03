@@ -1,10 +1,11 @@
 "use client";
 
 import { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
 import TransitionLink from "./motion/TransitionLink";
 import type { Project } from "../lib/projects";
+import type { MouseEvent } from "react";
 
 export default function ProjectCard({
   project,
@@ -15,6 +16,22 @@ export default function ProjectCard({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, margin: "-80px" });
+
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const springX = useSpring(x, { stiffness: 150, damping: 20, mass: 0.4 });
+  const springY = useSpring(y, { stiffness: 150, damping: 20, mass: 0.4 });
+
+  const handleImageMove = (e: MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    x.set(((e.clientX - rect.left) / rect.width - 0.5) * 14);
+    y.set(((e.clientY - rect.top) / rect.height - 0.5) * 14);
+  };
+
+  const handleImageLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
 
   return (
     <motion.div
@@ -32,19 +49,29 @@ export default function ProjectCard({
             transition={{ duration: 0.9, delay: delay + 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             <div
-              className="relative w-full aspect-[4/3] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.035]"
+              className="relative w-full aspect-[4/3] overflow-hidden"
               style={{
                 background: project.color,
                 viewTransitionName: `project-image-${project.slug}`,
               } as React.CSSProperties}
+              onMouseMove={handleImageMove}
+              onMouseLeave={handleImageLeave}
             >
               {project.image && (
-                <Image
-                  src={project.image}
-                  alt={project.name}
-                  fill
-                  className="object-cover"
-                />
+                <motion.div
+                  className="absolute inset-0"
+                  style={{ x: springX, y: springY }}
+                  initial={{ scale: 1.06 }}
+                  whileHover={{ scale: 1.1 }}
+                  transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+                >
+                  <Image
+                    src={project.image}
+                    alt={project.name}
+                    fill
+                    className="object-cover"
+                  />
+                </motion.div>
               )}
             </div>
           </motion.div>

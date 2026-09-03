@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import Reveal from "./Reveal";
+import TransitionLink from "./motion/TransitionLink";
 
 const strong = (children: React.ReactNode) => (
   <strong style={{ color: "var(--foreground)", fontWeight: 500 }}>{children}</strong>
@@ -104,7 +104,7 @@ export default function Studio() {
                 in how it is inhabited.
               </p>
 
-              <Link
+              <TransitionLink
                 href="/philosophy"
                 className="text-[13px] uppercase pb-1 inline-block transition-colors duration-300"
                 style={{
@@ -114,7 +114,7 @@ export default function Studio() {
                 }}
               >
                 Read Our Philosophy →
-              </Link>
+              </TransitionLink>
             </div>
           </Reveal>
         </div>

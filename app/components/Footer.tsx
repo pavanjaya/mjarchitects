@@ -1,8 +1,8 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Logo from "./Logo";
+import TransitionLink from "./motion/TransitionLink";
 
 const socials = [
   { label: "Instagram", href: "https://www.instagram.com/themjarchitects/" },
@@ -97,7 +97,7 @@ export default function Footer() {
             <Logo className="h-[34.56px] md:h-[40.32px] w-auto" />
           </div>
 
-          <Link
+          <TransitionLink
             href="/privacy"
             className="relative group inline-block text-[12px] uppercase pb-1"
             style={{ color: "rgba(255,255,255,0.5)", letterSpacing: "0.05em" }}
@@ -107,7 +107,7 @@ export default function Footer() {
               className="absolute left-0 -bottom-0 h-px w-full origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out"
               style={{ background: "currentColor" }}
             />
-          </Link>
+          </TransitionLink>
 
           <p
             className="text-[12px]"

@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "../../components/Reveal";
 import ProjectCarousel from "../../components/ProjectCarousel";
+import TransitionLink from "../../components/motion/TransitionLink";
 import { projects, getProjectBySlug } from "../../lib/projects";
 
 function article(word: string) {
@@ -151,7 +151,7 @@ export default async function ProjectPage({
       </section>
 
       <Reveal>
-        <Link
+        <TransitionLink
           href={`/work/${next.slug}`}
           className="group block py-16 md:py-24 px-6 md:px-12 transition-colors duration-300"
           style={{ borderTop: "1px solid var(--border)" }}
@@ -175,7 +175,7 @@ export default async function ProjectPage({
               {next.name} →
             </h2>
           </div>
-        </Link>
+        </TransitionLink>
       </Reveal>
     </>
   );

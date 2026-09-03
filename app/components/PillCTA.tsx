@@ -1,9 +1,9 @@
 "use client";
 
-import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { motion, useMotionValue, useSpring } from "framer-motion";
 import type { MouseEvent } from "react";
+import TransitionLink from "./motion/TransitionLink";
 
 export default function PillCTA({
   href,
@@ -34,7 +34,7 @@ export default function PillCTA({
 
   return (
     <motion.div style={{ x: springX, y: springY, display: "inline-block" }}>
-      <Link
+      <TransitionLink
         href={href}
         className={`group inline-flex items-center gap-3 text-[13px] uppercase font-display px-8 py-4 rounded-none border transition-colors duration-300 ${className}`}
         style={{
@@ -52,7 +52,7 @@ export default function PillCTA({
       >
         {children}
         <ArrowRight size={16} className="transition-transform duration-300 group-hover:translate-x-2" />
-      </Link>
+      </TransitionLink>
     </motion.div>
   );
 }

@@ -3,6 +3,7 @@ import { Archivo } from "next/font/google";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Preloader from "./components/motion/Preloader";
+import SmoothScroll from "./components/motion/SmoothScroll";
 import "./globals.css";
 
 const grotesk = Archivo({
@@ -25,6 +26,7 @@ export default function RootLayout({
     <html lang="en" className={`h-full ${grotesk.variable}`}>
       <body className="min-h-full">
         <Preloader />
+        <SmoothScroll />
         <Navbar />
         {children}
         <Footer />

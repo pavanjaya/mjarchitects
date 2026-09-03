@@ -1,10 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import Logo from "./Logo";
+import TransitionLink from "./motion/TransitionLink";
 
 const navLinks = [
   { label: "Work", href: "/work" },
@@ -44,13 +44,13 @@ export default function Navbar() {
         }}
       >
         <div className="max-w-[1600px] mx-auto px-6 md:px-12 py-6 flex items-center justify-between">
-          <Link href="/" className="flex items-center" style={{ color: fg }}>
+          <TransitionLink href="/" className="flex items-center" style={{ color: fg }}>
             <Logo className="h-[34.56px] md:h-[40.32px] w-auto" />
-          </Link>
+          </TransitionLink>
 
           <div className="hidden md:flex items-center gap-10">
             {navLinks.map((link) => (
-              <Link
+              <TransitionLink
                 key={link.label}
                 href={link.href}
                 className="relative group text-[13px] uppercase font-display transition-colors duration-300 pb-1"
@@ -66,7 +66,7 @@ export default function Navbar() {
                   }`}
                   style={{ background: "currentColor" }}
                 />
-              </Link>
+              </TransitionLink>
             ))}
           </div>
 
@@ -90,7 +90,7 @@ export default function Navbar() {
         }}
       >
         {navLinks.map((link) => (
-          <Link
+          <TransitionLink
             key={link.label}
             href={link.href}
             onClick={() => setMenuOpen(false)}
@@ -98,7 +98,7 @@ export default function Navbar() {
             style={{ color: "var(--foreground)" }}
           >
             {link.label}
-          </Link>
+          </TransitionLink>
         ))}
       </div>
     </>

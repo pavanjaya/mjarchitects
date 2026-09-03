@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "../../components/Reveal";
+import TransitionLink from "../../components/motion/TransitionLink";
 import { posts, getPostBySlug } from "../../lib/blog";
 
 export function generateStaticParams() {
@@ -40,13 +40,13 @@ export default async function BlogPostPage({
       <section className="pt-40 pb-16 px-6 md:px-12">
         <div className="max-w-[1600px] mx-auto">
           <Reveal>
-            <Link
+            <TransitionLink
               href="/blog"
               className="text-[12px] uppercase inline-block mb-10 transition-colors duration-300"
               style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
             >
               ← Journal
-            </Link>
+            </TransitionLink>
             <p
               className="text-[12px] uppercase mb-6"
               style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
@@ -108,7 +108,7 @@ export default async function BlogPostPage({
       </section>
 
       <Reveal>
-        <Link
+        <TransitionLink
           href={`/blog/${next.slug}`}
           className="group block py-16 md:py-24 px-6 md:px-12 transition-colors duration-300"
           style={{ borderTop: "1px solid var(--border)" }}
@@ -132,7 +132,7 @@ export default async function BlogPostPage({
               {next.title} →
             </h2>
           </div>
-        </Link>
+        </TransitionLink>
       </Reveal>
     </>
   );

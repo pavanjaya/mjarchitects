@@ -21,6 +21,23 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Lenis owns scroll physics when active — native smooth-scroll would
+   double up with it on anchor jumps and programmatic scrollTo calls. */
+html.lenis {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
