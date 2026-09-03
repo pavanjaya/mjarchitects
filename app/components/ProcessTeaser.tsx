@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Reveal from "./Reveal";
 import PillCTA from "./PillCTA";
 import TextReveal from "./motion/TextReveal";
@@ -25,10 +26,14 @@ export default function ProcessTeaser() {
               (Our Process)
             </p>
 
-            <div
-              className="w-full aspect-[5/4] mb-8"
-              style={{ background: "#c9c4b6" }}
-            />
+            <div className="relative w-full aspect-[5/4] mb-8">
+              <Image
+                src="/process-cycle.png"
+                alt="MJ Architects six-stage process: Discovery, Concept, Design Development, Documentation, Construction, Handover"
+                fill
+                className="object-contain"
+              />
+            </div>
 
             <div>
               {steps.map((step, i) => (
