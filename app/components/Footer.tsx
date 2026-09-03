@@ -65,9 +65,9 @@ export default function Footer() {
             >
               MJ Architects
               <br />
-              G-2, Neelima Apartment, College Rd, Vise Mala
+              1, Janaki, Architect Colony, Gangapur Road
               <br />
-              Nashik, Maharashtra 422005
+              Nashik, Maharashtra 422013
             </div>
           </div>
 

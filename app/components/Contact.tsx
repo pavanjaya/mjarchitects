@@ -6,7 +6,7 @@ import Reveal from "./Reveal";
 const offices = [
   {
     city: "Nashik",
-    address: "G-2, Neelima Apartment, College Rd, Vise Mala\nNashik, Maharashtra 422005",
+    address: "1, Janaki, Architect Colony, Gangapur Road\nNashik, Maharashtra 422013",
     phone: "+91 22 6600 1400",
     email: "hello@mjarchitects.co",
   },

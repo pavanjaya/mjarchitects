@@ -231,35 +231,6 @@ export default function Studio() {
             </p>
           </div>
         </Reveal>
-
-        <Reveal delay={0.1}>
-          <div
-            className="grid grid-cols-2 md:grid-cols-4 gap-8 pt-8"
-            style={{ borderTop: "1px solid var(--border)" }}
-          >
-            {[
-              { label: "Principal Architect", value: "Mahesh Jangid" },
-              { label: "Studio Founded", value: "2008, Mumbai" },
-              { label: "Team Size", value: "42 Architects" },
-              { label: "Active Projects", value: "18 Worldwide" },
-            ].map((item) => (
-              <div key={item.label}>
-                <p
-                  className="text-[11px] uppercase mb-2"
-                  style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
-                >
-                  {item.label}
-                </p>
-                <p
-                  className="text-sm font-display"
-                  style={{ color: "var(--foreground)" }}
-                >
-                  {item.value}
-                </p>
-              </div>
-            ))}
-          </div>
-        </Reveal>
       </div>
     </section>
   );
