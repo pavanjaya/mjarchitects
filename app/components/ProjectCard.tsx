@@ -27,9 +27,9 @@ export default function ProjectCard({
         {/* Image */}
         <div className="mb-8 overflow-hidden">
           <motion.div
-            initial={{ clipPath: "inset(0 0 100% 0)" }}
-            animate={inView ? { clipPath: "inset(0 0 0% 0)" } : {}}
-            transition={{ duration: 0.9, delay: delay + 0.1, ease: [0.65, 0, 0.35, 1] }}
+            initial={{ opacity: 0 }}
+            animate={inView ? { opacity: 1 } : {}}
+            transition={{ duration: 0.9, delay: delay + 0.1, ease: [0.22, 1, 0.36, 1] }}
           >
             <div
               className="relative w-full aspect-[4/3] overflow-hidden transition-transform duration-700 ease-out group-hover:scale-[1.035]"
