@@ -35,7 +35,7 @@ export default function ProjectCarousel({
             alt={`${alt} — image ${index + 1} of ${images.length}`}
             fill
             priority
-            className="object-cover"
+            className="object-contain"
           />
         )}
 
