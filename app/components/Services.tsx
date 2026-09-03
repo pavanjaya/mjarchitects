@@ -1,8 +1,9 @@
 "use client";
 
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
+import type { MouseEvent } from "react";
 import Reveal from "./Reveal";
 import PillCTA from "./PillCTA";
 
@@ -57,9 +58,89 @@ const services = [
   },
 ];
 
-export default function Services() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+function ServiceCard({ service }: { service: (typeof services)[number] }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-80px" });
 
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const springX = useSpring(x, { stiffness: 150, damping: 20, mass: 0.4 });
+  const springY = useSpring(y, { stiffness: 150, damping: 20, mass: 0.4 });
+
+  const handleImageMove = (e: MouseEvent<HTMLDivElement>) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    x.set(((e.clientX - rect.left) / rect.width - 0.5) * 14);
+    y.set(((e.clientY - rect.top) / rect.height - 0.5) * 14);
+  };
+
+  const handleImageLeave = () => {
+    x.set(0);
+    y.set(0);
+  };
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 28 }}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+    >
+      <div
+        className="relative w-full aspect-[4/3] overflow-hidden mb-8"
+        style={{ background: "var(--surface)" }}
+        onMouseMove={handleImageMove}
+        onMouseLeave={handleImageLeave}
+      >
+        <motion.div
+          className="absolute inset-0"
+          style={{ x: springX, y: springY }}
+          initial={{ scale: 1.08, opacity: 0 }}
+          animate={inView ? { scale: 1.06, opacity: 1 } : {}}
+          whileHover={{ scale: 1.1 }}
+          transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <Image src={service.image} alt={service.title} fill className="object-cover" />
+        </motion.div>
+      </div>
+
+      <span
+        className="block font-display mb-3"
+        style={{ color: "var(--muted)", fontSize: "13px" }}
+      >
+        {service.num}
+      </span>
+      <h3
+        className="font-display uppercase mb-4"
+        style={{
+          color: "var(--foreground)",
+          fontSize: "clamp(1.25rem, 2vw, 1.625rem)",
+          letterSpacing: "-0.01em",
+        }}
+      >
+        {service.title}
+      </h3>
+      <p
+        className="text-base leading-relaxed mb-6 max-w-md"
+        style={{ color: "var(--muted)" }}
+      >
+        {service.description}
+      </p>
+      <div className="flex flex-wrap gap-2">
+        {service.includes.map((d) => (
+          <span
+            key={d}
+            className="text-[12px] px-3 py-1.5"
+            style={{ color: "var(--foreground)", border: "1px solid var(--border)" }}
+          >
+            {d}
+          </span>
+        ))}
+      </div>
+    </motion.div>
+  );
+}
+
+export default function Services() {
   return (
     <section id="services" className="py-28 md:py-36 px-6 md:px-12">
       <div className="max-w-[1600px] mx-auto">
@@ -90,107 +171,17 @@ export default function Services() {
           </div>
         </Reveal>
 
-        <div style={{ borderTop: "1px solid var(--border)" }}>
-          {services.map((service, i) => {
-            const open = openIndex === i;
-            return (
-              <div key={service.num} style={{ borderBottom: "1px solid var(--border)" }}>
-                <button
-                  onClick={() => setOpenIndex(open ? null : i)}
-                  className="w-full text-left py-9 flex items-center gap-6 md:gap-10 group"
-                >
-                  <span
-                    className="text-[13px] font-display shrink-0 w-10"
-                    style={{ color: "var(--muted)" }}
-                  >
-                    {service.num}
-                  </span>
-                  <span
-                    className="font-display uppercase flex-1 transition-opacity duration-300"
-                    style={{
-                      color: "var(--foreground)",
-                      fontSize: "clamp(1.25rem, 2.5vw, 2rem)",
-                      letterSpacing: "-0.02em",
-                      opacity: open ? 1 : 0.85,
-                    }}
-                  >
-                    {service.title}
-                  </span>
-                  <span
-                    className="text-[12px] uppercase shrink-0 transition-colors duration-300"
-                    style={{ color: "var(--foreground)" }}
-                  >
-                    {open ? "LESS −" : "MORE +"}
-                  </span>
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {open && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pb-14 md:pb-16 pl-0 md:pl-20">
-                        <div
-                          className="relative w-full aspect-[21/9] overflow-hidden mb-8"
-                          style={{ background: "var(--surface)" }}
-                        >
-                          <motion.div
-                            className="absolute inset-0"
-                            initial={{ scale: 1.08, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                          >
-                            <Image
-                              src={service.image}
-                              alt={service.title}
-                              fill
-                              className="object-cover"
-                            />
-                          </motion.div>
-                        </div>
-                        <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
-                          <p
-                            className="text-base leading-relaxed"
-                            style={{ color: "var(--muted)" }}
-                          >
-                            {service.description}
-                          </p>
-                          <div>
-                            <p
-                              className="text-[11px] uppercase mb-4"
-                              style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
-                            >
-                              Includes
-                            </p>
-                            <ul className="space-y-2">
-                              {service.includes.map((d) => (
-                                <li
-                                  key={d}
-                                  className="text-sm flex items-center gap-3"
-                                  style={{ color: "var(--foreground)" }}
-                                >
-                                  <span style={{ color: "var(--foreground)" }}>—</span>
-                                  {d}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+        <div
+          className="grid md:grid-cols-2 gap-x-12 gap-y-20 md:gap-y-24 pt-16"
+          style={{ borderTop: "1px solid var(--border)" }}
+        >
+          {services.map((service) => (
+            <ServiceCard key={service.num} service={service} />
+          ))}
         </div>
 
         <Reveal>
-          <div className="flex justify-center pt-24 md:pt-28">
+          <div className="flex justify-center pt-24 md:pt-32">
             <PillCTA href="/contact">Start a Project</PillCTA>
           </div>
         </Reveal>

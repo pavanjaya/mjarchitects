@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Reveal from "./Reveal";
 
@@ -200,9 +200,84 @@ const themes = [
   },
 ];
 
-export default function Philosophy() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+function ThemeSection({
+  theme,
+  imageFirst,
+}: {
+  theme: (typeof themes)[number];
+  imageFirst: boolean;
+}) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
 
+  return (
+    <div
+      ref={ref}
+      className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center"
+    >
+      <div
+        className={`lg:col-span-6 ${imageFirst ? "lg:order-1" : "lg:order-2"}`}
+      >
+        <div
+          className="relative w-full aspect-[4/5] overflow-hidden"
+          style={{ background: "var(--surface)" }}
+        >
+          <motion.div
+            className="absolute inset-0"
+            initial={{ scale: 1.08, opacity: 0 }}
+            animate={inView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Image
+              src={theme.image}
+              alt={theme.title}
+              fill
+              className="object-cover"
+            />
+          </motion.div>
+        </div>
+      </div>
+
+      <motion.div
+        className={`lg:col-span-6 ${imageFirst ? "lg:order-2" : "lg:order-1"}`}
+        initial={{ opacity: 0, y: 24 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <span
+          className="block font-display mb-6"
+          style={{
+            color: "var(--border)",
+            fontSize: "clamp(2.5rem, 5vw, 4rem)",
+            letterSpacing: "-0.02em",
+            lineHeight: 1,
+          }}
+        >
+          {theme.num}
+        </span>
+        <h3
+          className="font-display uppercase mb-6 max-w-lg"
+          style={{
+            color: "var(--foreground)",
+            fontSize: "clamp(1.5rem, 2.5vw, 2.25rem)",
+            letterSpacing: "-0.01em",
+            lineHeight: 1.15,
+          }}
+        >
+          {theme.title}
+        </h3>
+        <div
+          className="text-base leading-relaxed max-w-lg"
+          style={{ color: "var(--muted)" }}
+        >
+          {theme.body}
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+export default function Philosophy() {
   return (
     <section
       id="philosophy"
@@ -211,7 +286,7 @@ export default function Philosophy() {
     >
       <div className="max-w-[1600px] mx-auto">
         <Reveal>
-          <div className="max-w-3xl mb-24 md:mb-32">
+          <div className="max-w-3xl mb-28 md:mb-36">
             <p
               className="text-[12px] uppercase mb-8"
               style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
@@ -239,88 +314,17 @@ export default function Philosophy() {
           </div>
         </Reveal>
 
-        <div style={{ borderTop: "1px solid var(--border)" }}>
-          {themes.map((theme, i) => {
-            const open = openIndex === i;
-            return (
-              <div key={theme.num} style={{ borderBottom: "1px solid var(--border)" }}>
-                <button
-                  onClick={() => setOpenIndex(open ? null : i)}
-                  className="w-full text-left py-9 md:py-11 flex items-center gap-6 md:gap-10 group"
-                >
-                  <span
-                    className="text-[13px] font-display shrink-0 w-10"
-                    style={{ color: "var(--muted)" }}
-                  >
-                    {theme.num}
-                  </span>
-                  <span
-                    className="font-display uppercase flex-1 transition-opacity duration-300"
-                    style={{
-                      color: "var(--foreground)",
-                      fontSize: "clamp(1.25rem, 2vw, 1.75rem)",
-                      letterSpacing: "-0.01em",
-                      lineHeight: 1.15,
-                      opacity: open ? 1 : 0.85,
-                    }}
-                  >
-                    {theme.title}
-                  </span>
-                  <span
-                    className="text-[12px] uppercase shrink-0 transition-colors duration-300"
-                    style={{ color: "var(--foreground)" }}
-                  >
-                    {open ? "LESS −" : "MORE +"}
-                  </span>
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {open && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pb-14 md:pb-16 pl-0 md:pl-20 grid lg:grid-cols-12 gap-8 lg:gap-12">
-                        <div className="lg:col-span-5 order-1">
-                          <motion.div
-                            className="relative w-full aspect-[4/5] overflow-hidden"
-                            style={{ background: "var(--surface)" }}
-                          >
-                            <motion.div
-                              className="absolute inset-0"
-                              initial={{ scale: 1.08, opacity: 0 }}
-                              animate={{ scale: 1, opacity: 1 }}
-                              transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                            >
-                              <Image
-                                src={theme.image}
-                                alt={theme.title}
-                                fill
-                                className="object-cover"
-                              />
-                            </motion.div>
-                          </motion.div>
-                        </div>
-                        <div
-                          className="lg:col-span-7 order-2 text-base leading-relaxed max-w-2xl"
-                          style={{ color: "var(--muted)" }}
-                        >
-                          {theme.body}
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+        <div className="space-y-28 md:space-y-40">
+          {themes.map((theme, i) => (
+            <ThemeSection key={theme.num} theme={theme} imageFirst={i % 2 === 0} />
+          ))}
         </div>
 
         <Reveal>
-          <div className="pt-24 md:pt-32 text-center">
+          <div
+            className="pt-28 md:pt-36 mt-28 md:mt-36 text-center"
+            style={{ borderTop: "1px solid var(--border)" }}
+          >
             <p
               className="font-display uppercase mb-10"
               style={{

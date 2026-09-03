@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import Reveal from "./Reveal";
 
@@ -62,9 +62,116 @@ const steps = [
   },
 ];
 
-export default function Process() {
-  const [openIndex, setOpenIndex] = useState<number | null>(0);
+function StepRow({ step, isLast }: { step: (typeof steps)[number]; isLast: boolean }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
 
+  return (
+    <div ref={ref} className="flex gap-6 md:gap-12">
+      {/* Rail */}
+      <div className="flex flex-col items-center shrink-0">
+        <motion.div
+          className="rounded-full flex items-center justify-center font-display shrink-0"
+          style={{
+            width: "clamp(3rem, 5vw, 4.5rem)",
+            height: "clamp(3rem, 5vw, 4.5rem)",
+            border: "1px solid var(--foreground)",
+            color: "var(--foreground)",
+            background: "var(--surface)",
+            fontSize: "clamp(0.9rem, 1.2vw, 1.1rem)",
+          }}
+          initial={{ scale: 0.85, opacity: 0 }}
+          animate={inView ? { scale: 1, opacity: 1 } : {}}
+          transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+        >
+          {step.num}
+        </motion.div>
+        {!isLast && (
+          <div className="relative w-px flex-1 mt-2 overflow-hidden" style={{ background: "var(--border)" }}>
+            <motion.div
+              className="absolute inset-x-0 top-0 w-px"
+              style={{ background: "var(--foreground)" }}
+              initial={{ height: "0%" }}
+              animate={inView ? { height: "100%" } : {}}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
+            />
+          </div>
+        )}
+      </div>
+
+      {/* Content */}
+      <motion.div
+        className="flex-1 pb-20 md:pb-28"
+        initial={{ opacity: 0, y: 24 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.7, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
+      >
+        <div className="flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 mb-6">
+          <h3
+            className="font-display uppercase"
+            style={{
+              color: "var(--foreground)",
+              fontSize: "clamp(1.25rem, 2.5vw, 2rem)",
+              letterSpacing: "-0.02em",
+            }}
+          >
+            {step.title}
+          </h3>
+          <span
+            className="text-[12px] uppercase"
+            style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
+          >
+            {step.duration}
+          </span>
+        </div>
+
+        <div
+          className="relative w-full aspect-[21/9] overflow-hidden mb-8"
+          style={{ background: "var(--background)" }}
+        >
+          <motion.div
+            className="absolute inset-0"
+            initial={{ scale: 1.08, opacity: 0 }}
+            animate={inView ? { scale: 1, opacity: 1 } : {}}
+            transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+          >
+            <Image src={step.image} alt={step.title} fill className="object-cover" />
+          </motion.div>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
+          <p className="text-base leading-relaxed" style={{ color: "var(--muted)" }}>
+            {step.description}
+          </p>
+          <div>
+            <p
+              className="text-[11px] uppercase mb-4"
+              style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
+            >
+              Deliverables
+            </p>
+            <div className="flex flex-wrap gap-2">
+              {step.deliverables.map((d) => (
+                <span
+                  key={d}
+                  className="text-[12px] px-3 py-1.5"
+                  style={{
+                    color: "var(--foreground)",
+                    border: "1px solid var(--border)",
+                  }}
+                >
+                  {d}
+                </span>
+              ))}
+            </div>
+          </div>
+        </div>
+      </motion.div>
+    </div>
+  );
+}
+
+export default function Process() {
   return (
     <section id="process" className="py-28 md:py-36 px-6 md:px-12" style={{ background: "var(--surface)" }}>
       <div className="max-w-[1600px] mx-auto">
@@ -95,109 +202,10 @@ export default function Process() {
           </div>
         </Reveal>
 
-        <div style={{ borderTop: "1px solid var(--border)" }}>
-          {steps.map((step, i) => {
-            const open = openIndex === i;
-            return (
-              <div key={step.num} style={{ borderBottom: "1px solid var(--border)" }}>
-                <button
-                  onClick={() => setOpenIndex(open ? null : i)}
-                  className="w-full text-left py-9 flex items-center gap-6 md:gap-10 group"
-                >
-                  <span
-                    className="text-[13px] font-display shrink-0 w-10"
-                    style={{ color: "var(--muted)" }}
-                  >
-                    {step.num}
-                  </span>
-                  <span
-                    className="font-display uppercase flex-1 transition-opacity duration-300"
-                    style={{
-                      color: "var(--foreground)",
-                      fontSize: "clamp(1.25rem, 2.5vw, 2rem)",
-                      letterSpacing: "-0.02em",
-                      opacity: open ? 1 : 0.85,
-                    }}
-                  >
-                    {step.title}
-                  </span>
-                  <span
-                    className="hidden md:block text-[12px] uppercase shrink-0"
-                    style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
-                  >
-                    {step.duration}
-                  </span>
-                  <span
-                    className="text-[12px] uppercase shrink-0 transition-colors duration-300"
-                    style={{ color: "var(--foreground)" }}
-                  >
-                    {open ? "LESS −" : "MORE +"}
-                  </span>
-                </button>
-
-                <AnimatePresence initial={false}>
-                  {open && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
-                      className="overflow-hidden"
-                    >
-                      <div className="pb-14 md:pb-16 pl-0 md:pl-20">
-                        <div
-                          className="relative w-full aspect-[21/9] overflow-hidden mb-8"
-                          style={{ background: "var(--background)" }}
-                        >
-                          <motion.div
-                            className="absolute inset-0"
-                            initial={{ scale: 1.08, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }}
-                          >
-                            <Image
-                              src={step.image}
-                              alt={step.title}
-                              fill
-                              className="object-cover"
-                            />
-                          </motion.div>
-                        </div>
-                        <div className="grid md:grid-cols-2 gap-8 max-w-4xl">
-                          <p
-                            className="text-base leading-relaxed"
-                            style={{ color: "var(--muted)" }}
-                          >
-                            {step.description}
-                          </p>
-                          <div>
-                            <p
-                              className="text-[11px] uppercase mb-4"
-                              style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
-                            >
-                              Deliverables
-                            </p>
-                            <ul className="space-y-2">
-                              {step.deliverables.map((d) => (
-                                <li
-                                  key={d}
-                                  className="text-sm flex items-center gap-3"
-                                  style={{ color: "var(--foreground)" }}
-                                >
-                                  <span style={{ color: "var(--foreground)" }}>—</span>
-                                  {d}
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            );
-          })}
+        <div>
+          {steps.map((step, i) => (
+            <StepRow key={step.num} step={step} isLast={i === steps.length - 1} />
+          ))}
         </div>
       </div>
     </section>
