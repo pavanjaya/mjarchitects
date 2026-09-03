@@ -255,7 +255,7 @@ function ThemeSection({
         >
           {theme.num}
         </span>
-        <h3
+        <h2
           className="font-display uppercase mb-6 max-w-lg"
           style={{
             color: "var(--foreground)",
@@ -265,7 +265,7 @@ function ThemeSection({
           }}
         >
           {theme.title}
-        </h3>
+        </h2>
         <div
           className="text-base leading-relaxed max-w-lg"
           style={{ color: "var(--muted)" }}
@@ -293,7 +293,7 @@ export default function Philosophy() {
             >
               Our Philosophy
             </p>
-            <h2
+            <h1
               className="font-display uppercase mb-10"
               style={{
                 color: "var(--foreground)",
@@ -305,7 +305,7 @@ export default function Philosophy() {
               Understanding a place before intervening in it. Understanding
               people before designing for them. Understanding material
               before giving it form.
-            </h2>
+            </h1>
             <p className="text-lg leading-relaxed" style={{ color: "var(--muted)" }}>
               And understanding that space is not merely what surrounds us,
               but what shapes how we live, move, gather, pause, and

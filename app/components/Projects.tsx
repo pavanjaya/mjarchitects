@@ -17,13 +17,17 @@ export default function Projects({ featured = false }: { featured?: boolean }) {
       ? projects
       : projects.filter((p) => p.category === activeCategory);
 
+  // Standalone /work page needs a real h1; embedded as a homepage
+  // section it must stay an h2 so it doesn't collide with Hero's h1.
+  const Heading = featured ? "h2" : "h1";
+
   return (
     <section id="work" className="pt-20 pb-24 px-6 md:px-12">
       <div className="max-w-[1600px] mx-auto">
         {/* Header */}
         <Reveal>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
-            <h2
+            <Heading
               className="font-display uppercase"
               style={{
                 color: "var(--foreground)",
@@ -32,8 +36,8 @@ export default function Projects({ featured = false }: { featured?: boolean }) {
                 lineHeight: 1,
               }}
             >
-              Featured Work
-            </h2>
+              {featured ? "Featured Work" : "All Work"}
+            </Heading>
 
             {/* Filter */}
             {!featured && (

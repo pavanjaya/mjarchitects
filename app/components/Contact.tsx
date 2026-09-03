@@ -5,22 +5,10 @@ import Reveal from "./Reveal";
 
 const offices = [
   {
-    city: "Mumbai",
-    address: "14th Floor, One BKC\nBandra Kurla Complex\nMumbai 400 051",
+    city: "Nashik",
+    address: "G-2, Neelima Apartment, College Rd, Vise Mala\nNashik, Maharashtra 422005",
     phone: "+91 22 6600 1400",
-    email: "mumbai@mjarchitect.com",
-  },
-  {
-    city: "London",
-    address: "22 Great Peter Street\nWestminster\nLondon SW1P 2BU",
-    phone: "+44 20 7654 3210",
-    email: "london@mjarchitect.com",
-  },
-  {
-    city: "Dubai",
-    address: "Level 9, DIFC Gate Building\nDubai International Financial Centre\nDubai, UAE",
-    phone: "+971 4 325 1800",
-    email: "dubai@mjarchitect.com",
+    email: "hello@mjarchitects.co",
   },
 ];
 
@@ -43,7 +31,7 @@ export default function Contact() {
           >
             Get In Touch
           </p>
-          <h2
+          <h1
             className="font-display uppercase mb-16 md:mb-24"
             style={{
               color: "var(--foreground)",
@@ -55,7 +43,7 @@ export default function Contact() {
             Let&apos;s Start a
             <br />
             Conversation
-          </h2>
+          </h1>
         </Reveal>
 
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-20">

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Studio from "../components/Studio";
 
 export const metadata: Metadata = {
-  title: "Studio — MJ Architect",
+  title: "Studio — MJ Architects",
   description: "MJ Architects is an architecture and design practice led by Mahesh Jangid.",
 };
 

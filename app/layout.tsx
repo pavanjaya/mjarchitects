@@ -13,7 +13,7 @@ const grotesk = Archivo({
 });
 
 export const metadata: Metadata = {
-  title: "MJ Architect — Design. Build. Inspire.",
+  title: "MJ Architects — Design. Build. Inspire.",
   description: "Award-winning architectural studio crafting spaces that inspire, endure, and connect humanity with the built environment.",
 };
 

@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Contact from "../components/Contact";
 
 export const metadata: Metadata = {
-  title: "Contact — MJ Architect",
-  description: "Start a conversation with MJ Architect.",
+  title: "Contact — MJ Architects",
+  description: "Start a conversation with MJ Architects.",
 };
 
 export default function ContactPage() {

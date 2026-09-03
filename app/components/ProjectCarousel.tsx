@@ -25,7 +25,9 @@ export default function ProjectCarousel({
   const next = () => setIndex((i) => (i + 1) % images.length);
 
   const nextRef = useRef(next);
-  nextRef.current = next;
+  useEffect(() => {
+    nextRef.current = next;
+  });
 
   useEffect(() => {
     if (images.length <= 1 || paused) return;

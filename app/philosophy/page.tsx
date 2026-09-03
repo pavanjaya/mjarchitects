@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Philosophy from "../components/Philosophy";
 
 export const metadata: Metadata = {
-  title: "Philosophy — MJ Architect",
+  title: "Philosophy — MJ Architects",
   description: "Sense gives architecture its order. Sensibility gives it depth. Space gives it life.",
 };
 

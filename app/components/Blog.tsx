@@ -6,6 +6,10 @@ import { posts } from "../lib/blog";
 export default function Blog({ limit }: { limit?: number }) {
   const shown = limit ? posts.slice(0, limit) : posts;
 
+  // Standalone /blog page needs a real h1; embedded as a homepage
+  // section it must stay an h2 so it doesn't collide with Hero's h1.
+  const Heading = limit ? "h2" : "h1";
+
   return (
     <section id="journal" className="py-24 px-6 md:px-12">
       <div className="max-w-[1600px] mx-auto">
@@ -18,7 +22,7 @@ export default function Blog({ limit }: { limit?: number }) {
               >
                 Journal
               </p>
-              <h2
+              <Heading
                 className="font-display uppercase"
                 style={{
                   color: "var(--foreground)",
@@ -28,7 +32,7 @@ export default function Blog({ limit }: { limit?: number }) {
                 }}
               >
                 Notes From the Studio
-              </h2>
+              </Heading>
             </div>
           </div>
         </Reveal>

@@ -114,7 +114,7 @@ function StepRow({ step, isLast }: { step: (typeof steps)[number]; isLast: boole
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.6, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
       >
-        <h3
+        <h2
           className="font-display uppercase mb-2"
           style={{
             color: "var(--foreground)",
@@ -123,7 +123,7 @@ function StepRow({ step, isLast }: { step: (typeof steps)[number]; isLast: boole
           }}
         >
           {step.num} — {step.title}
-        </h3>
+        </h2>
         <p
           className="text-[12px] uppercase mb-4"
           style={{ color: "var(--muted)", letterSpacing: "0.05em" }}
@@ -156,7 +156,7 @@ export default function Process() {
             >
               How We Work
             </p>
-            <h2
+            <h1
               className="font-display uppercase mb-10"
               style={{
                 color: "var(--foreground)",
@@ -166,7 +166,7 @@ export default function Process() {
               }}
             >
               A considered path from first conversation to final handover.
-            </h2>
+            </h1>
             <p className="text-lg leading-relaxed" style={{ color: "var(--muted)" }}>
               Every project moves through the same six stages — each one
               building on the last, none of them rushed. Structure gives the

@@ -30,8 +30,10 @@ export default function Navbar() {
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   // Home hero is a full-bleed dark image with no solid nav backing yet —
-  // use light text until the user scrolls past it.
-  const onDarkHero = pathname === "/" && !scrolled;
+  // use light text until the user scrolls past it. The mobile menu panel
+  // is always a solid light backdrop, so force dark text over it even
+  // while still on the dark hero.
+  const onDarkHero = pathname === "/" && !scrolled && !menuOpen;
   const fg = onDarkHero ? "#f5f3ef" : "var(--foreground)";
 
   return (

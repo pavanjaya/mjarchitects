@@ -17,18 +17,19 @@ export default function Studio() {
           >
             About the Studio
           </p>
-          <p
+          <h1
             className="font-display mb-16 md:mb-20 max-w-4xl"
             style={{
               color: "var(--foreground)",
               fontSize: "clamp(1.25rem, 2.5vw, 1.75rem)",
               letterSpacing: "-0.01em",
               lineHeight: 1.3,
+              fontWeight: 400,
             }}
           >
             MJ Architects is an architecture and design practice exploring
             the relationship between people, place, and space.
-          </p>
+          </h1>
         </Reveal>
 
         <Reveal delay={0.05}>

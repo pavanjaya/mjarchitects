@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Services from "../components/Services";
 
 export const metadata: Metadata = {
-  title: "Services — MJ Architect",
-  description: "Architectural design, interiors, master planning, landscape, project management, and sustainability consulting from MJ Architect.",
+  title: "Services — MJ Architects",
+  description: "Architectural design, interiors, master planning, landscape, project management, and sustainability consulting from MJ Architects.",
 };
 
 export default function ServicesPage() {
