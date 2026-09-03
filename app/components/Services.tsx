@@ -113,14 +113,15 @@ function ServiceCard({ service }: { service: (typeof services)[number] }) {
         className="font-display uppercase mb-4"
         style={{
           color: "var(--foreground)",
-          fontSize: "clamp(1.25rem, 2vw, 1.625rem)",
+          fontSize: "clamp(1.15rem, 1.6vw, 1.375rem)",
           letterSpacing: "-0.01em",
+          lineHeight: 1.2,
         }}
       >
         {service.title}
       </h3>
       <p
-        className="text-base leading-relaxed mb-6 max-w-md"
+        className="text-[15px] leading-relaxed mb-6"
         style={{ color: "var(--muted)" }}
       >
         {service.description}
@@ -172,7 +173,7 @@ export default function Services() {
         </Reveal>
 
         <div
-          className="grid md:grid-cols-2 gap-x-12 gap-y-20 md:gap-y-24 pt-16"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16 md:gap-y-20 pt-16"
           style={{ borderTop: "1px solid var(--border)" }}
         >
           {services.map((service) => (

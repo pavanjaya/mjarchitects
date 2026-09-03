@@ -18,7 +18,7 @@ export default function Statement() {
           className="font-display uppercase mb-16 md:mb-20"
           style={{
             color: "var(--foreground)",
-            fontSize: "clamp(2.75rem, 8vw, 7rem)",
+            fontSize: "clamp(1.9rem, 5.6vw, 4.9rem)",
             lineHeight: 1,
             letterSpacing: "-0.02em",
             fontWeight: 600,
