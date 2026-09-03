@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Reveal from "../../components/Reveal";
@@ -63,6 +64,27 @@ export default async function BlogPostPage({
             >
               {post.title}
             </h1>
+          </Reveal>
+        </div>
+      </section>
+
+      <section className="px-6 md:px-12 pb-16 md:pb-24">
+        <div className="max-w-[1600px] mx-auto">
+          <Reveal>
+            <div
+              className="relative w-full aspect-[16/9] overflow-hidden"
+              style={{ background: post.color }}
+            >
+              {post.image && (
+                <Image
+                  src={post.image}
+                  alt={post.title}
+                  fill
+                  priority
+                  className="object-cover"
+                />
+              )}
+            </div>
           </Reveal>
         </div>
       </section>

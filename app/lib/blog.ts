@@ -16,6 +16,7 @@ export const posts: Post[] = [
     title: "Designing With Light: Notes From the Studio",
     category: "Design Notes",
     color: "#c9c4b6",
+    image: "/blog/designing-with-light.jpg",
     date: "March 2026",
     readTime: "4 min read",
     excerpt:
@@ -31,6 +32,7 @@ export const posts: Post[] = [
     title: "Why Material Choice Shapes How We Live",
     category: "Philosophy",
     color: "#b9c0b4",
+    image: "/blog/material-and-memory.jpg",
     date: "January 2026",
     readTime: "5 min read",
     excerpt:
@@ -46,6 +48,7 @@ export const posts: Post[] = [
     title: "The Architecture of Slowness",
     category: "Philosophy",
     color: "#bcc2c9",
+    image: "/blog/architecture-of-slowness.jpg",
     date: "November 2025",
     readTime: "4 min read",
     excerpt:
@@ -61,6 +64,7 @@ export const posts: Post[] = [
     title: "Passive Cooling in a Warming City",
     category: "Sustainability",
     color: "#c9b9ae",
+    image: "/blog/passive-cooling-warming-city.jpg",
     date: "September 2025",
     readTime: "6 min read",
     excerpt:
@@ -76,6 +80,7 @@ export const posts: Post[] = [
     title: "What We Learned Building on Water",
     category: "Case Study",
     color: "#b8c7c9",
+    image: "/blog/building-on-water.jpg",
     date: "July 2025",
     readTime: "5 min read",
     excerpt:
@@ -91,6 +96,7 @@ export const posts: Post[] = [
     title: "Concrete, Weathering, and the Beauty of Time",
     category: "Design Notes",
     color: "#c2bcc9",
+    image: "/blog/concrete-weathering-time.jpg",
     date: "May 2025",
     readTime: "3 min read",
     excerpt:
