@@ -6,6 +6,20 @@ const strong = (children: React.ReactNode) => (
   <strong style={{ color: "var(--foreground)", fontWeight: 500 }}>{children}</strong>
 );
 
+const team = [
+  { name: "Dharam Jangid", role: "Civil Engineer" },
+  { name: "Reshma Jangid", role: "Interior Design" },
+  { name: "Adv. Jaya Sharma", role: "Legal Consultant" },
+];
+
+function initials(name: string) {
+  return name
+    .replace(/^Adv\.\s*/, "")
+    .split(" ")
+    .map((w) => w[0])
+    .join("");
+}
+
 export default function Studio() {
   return (
     <section id="studio" className="py-24 px-6 md:px-12">
@@ -205,6 +219,58 @@ export default function Studio() {
                   Sense. Sensibility. Space.
                 </p>
               </div>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <div
+            className="pt-16 md:pt-20 mb-20 md:mb-28"
+            style={{ borderTop: "1px solid var(--border)" }}
+          >
+            <p
+              className="text-[12px] uppercase mb-10"
+              style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
+            >
+              (The Team)
+            </p>
+
+            <div className="grid sm:grid-cols-3 gap-8 md:gap-12">
+              {team.map((member) => (
+                <div key={member.name}>
+                  <div
+                    className="relative w-full aspect-[4/5] mb-6 flex items-center justify-center"
+                    style={{ background: "var(--surface)" }}
+                  >
+                    <span
+                      className="font-display"
+                      style={{
+                        color: "var(--muted)",
+                        fontSize: "clamp(1.5rem, 3vw, 2rem)",
+                        letterSpacing: "-0.01em",
+                      }}
+                    >
+                      {initials(member.name)}
+                    </span>
+                  </div>
+                  <p
+                    className="font-display uppercase"
+                    style={{
+                      color: "var(--foreground)",
+                      fontSize: "clamp(1rem, 1.5vw, 1.125rem)",
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    {member.name}
+                  </p>
+                  <p
+                    className="text-sm mt-1"
+                    style={{ color: "var(--muted)" }}
+                  >
+                    {member.role}
+                  </p>
+                </div>
+              ))}
             </div>
           </div>
         </Reveal>
