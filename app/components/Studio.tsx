@@ -7,17 +7,73 @@ const strong = (children: React.ReactNode) => (
 );
 
 const team = [
-  { name: "Dharam Jangid", role: "Civil Engineer" },
-  { name: "Reshma Jangid", role: "Interior Design" },
+  { name: "Ar. Ali Munir Khan", role: "Associate Architect" },
+  { name: "Ar. Ajay A. Malve", role: "Sr. Architect" },
+  { name: "Ar. Nikita S. Bhole", role: "Sr. Architect" },
+  { name: "Ar. Kushaboo P. Bhonsale", role: "Jr. Architect" },
+  { name: "Ar. Nidhi Pardeshi", role: "Jr. Architect" },
+  { name: "Id. Reshma Sharma", role: "Sr. Interior Designer" },
+  { name: "Id. Disha Judyani", role: "Interior Designer" },
+  { name: "Id. Shivani R. Kshatriya", role: "Interior Designer" },
+  { name: "Er. Suraj R. Sharma", role: "Civil Engineer" },
+  { name: "Er. Dharmendra Jangid", role: "Project Engineer" },
+  { name: "Er. Tushar Alkari", role: "Draftsman" },
+  { name: "Rahul D. Dhumal", role: "Draftsman" },
+  { name: "Manoj B. Karnik", role: "Office Assistant" },
+  { name: "Mauli Korde", role: "Driver" },
+];
+
+const consultants = [
   { name: "Adv. Jaya Sharma", role: "Legal Consultant", image: "/team/jaya-sharma.jpg" },
 ];
 
 function initials(name: string) {
-  return name
-    .replace(/^Adv\.\s*/, "")
-    .split(" ")
-    .map((w) => w[0])
-    .join("");
+  const stripped = name.replace(/^(Ar|Id|Er|Adv|Dr)\.\s*/i, "");
+  const parts = stripped.split(" ").filter((w) => w.replace(/\./g, "").length > 1);
+  if (parts.length === 0) return stripped[0] ?? "";
+  const first = parts[0][0];
+  const last = parts[parts.length - 1][0];
+  return (first + last).toUpperCase();
+}
+
+function TeamCard({ member }: { member: { name: string; role: string; image?: string } }) {
+  return (
+    <div>
+      <div
+        className="relative w-full aspect-square mb-6 flex items-center justify-center overflow-hidden"
+        style={{ background: "var(--surface)" }}
+      >
+        {member.image ? (
+          <Image src={member.image} alt={member.name} fill className="object-cover" />
+        ) : (
+          <span
+            className="font-display"
+            style={{
+              color: "var(--muted)",
+              fontSize: "clamp(2rem, 4vw, 2.75rem)",
+              letterSpacing: "-0.01em",
+            }}
+          >
+            {initials(member.name)}
+          </span>
+        )}
+      </div>
+      <p
+        className="font-display"
+        style={{
+          color: "var(--foreground)",
+          fontSize: "clamp(1.05rem, 1.6vw, 1.2rem)",
+          letterSpacing: "-0.01em",
+          fontWeight: 600,
+        }}
+      >
+        {member.name}
+      </p>
+      <p className="text-sm mt-1" style={{ color: "var(--muted)" }}>
+        {member.role}
+      </p>
+    </div>
+  );
 }
 
 export default function Studio() {
@@ -237,49 +293,19 @@ export default function Studio() {
 
             <div className="grid sm:grid-cols-3 gap-8 md:gap-12">
               {team.map((member) => (
-                <div key={member.name}>
-                  <div
-                    className="relative w-full aspect-square mb-6 flex items-center justify-center overflow-hidden"
-                    style={{ background: "var(--surface)" }}
-                  >
-                    {member.image ? (
-                      <Image
-                        src={member.image}
-                        alt={member.name}
-                        fill
-                        className="object-cover"
-                      />
-                    ) : (
-                      <span
-                        className="font-display"
-                        style={{
-                          color: "var(--muted)",
-                          fontSize: "clamp(2rem, 4vw, 2.75rem)",
-                          letterSpacing: "-0.01em",
-                        }}
-                      >
-                        {initials(member.name)}
-                      </span>
-                    )}
-                  </div>
-                  <p
-                    className="font-display"
-                    style={{
-                      color: "var(--foreground)",
-                      fontSize: "clamp(1.05rem, 1.6vw, 1.2rem)",
-                      letterSpacing: "-0.01em",
-                      fontWeight: 600,
-                    }}
-                  >
-                    {member.name}
-                  </p>
-                  <p
-                    className="text-sm mt-1"
-                    style={{ color: "var(--muted)" }}
-                  >
-                    {member.role}
-                  </p>
-                </div>
+                <TeamCard key={member.name} member={member} />
+              ))}
+            </div>
+
+            <p
+              className="text-[12px] uppercase mt-16 md:mt-20 mb-10"
+              style={{ color: "var(--foreground)", letterSpacing: "0.05em" }}
+            >
+              (External Consultant)
+            </p>
+            <div className="grid sm:grid-cols-3 gap-8 md:gap-12">
+              {consultants.map((member) => (
+                <TeamCard key={member.name} member={member} />
               ))}
             </div>
           </div>
