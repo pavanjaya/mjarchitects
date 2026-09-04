@@ -239,14 +239,14 @@ export default function Studio() {
               {team.map((member) => (
                 <div key={member.name}>
                   <div
-                    className="relative w-full aspect-[4/5] mb-6 flex items-center justify-center"
+                    className="relative w-full aspect-square mb-6 flex items-center justify-center"
                     style={{ background: "var(--surface)" }}
                   >
                     <span
                       className="font-display"
                       style={{
                         color: "var(--muted)",
-                        fontSize: "clamp(1.5rem, 3vw, 2rem)",
+                        fontSize: "clamp(2rem, 4vw, 2.75rem)",
                         letterSpacing: "-0.01em",
                       }}
                     >
@@ -254,11 +254,12 @@ export default function Studio() {
                     </span>
                   </div>
                   <p
-                    className="font-display uppercase"
+                    className="font-display"
                     style={{
                       color: "var(--foreground)",
-                      fontSize: "clamp(1rem, 1.5vw, 1.125rem)",
+                      fontSize: "clamp(1.05rem, 1.6vw, 1.2rem)",
                       letterSpacing: "-0.01em",
+                      fontWeight: 600,
                     }}
                   >
                     {member.name}
