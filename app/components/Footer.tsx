@@ -20,7 +20,7 @@ export default function Footer() {
         <h2
           className="font-display uppercase mb-16 md:mb-24"
           style={{
-            color: "rgba(243, 232, 225, 0.75)",
+            color: "rgba(243, 232, 225, 0.6)",
             fontSize: "clamp(2.5rem, 7vw, 6rem)",
             letterSpacing: "-0.03em",
             lineHeight: 0.95,
@@ -93,7 +93,7 @@ export default function Footer() {
 
         <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
           <div className="flex items-center" style={{ color: "var(--background)" }}>
-            <Logo className="h-[34.56px] md:h-[40.32px] w-auto" />
+            <Logo className="h-[26.27px] md:h-[30.64px] w-auto" />
           </div>
 
           <TransitionLink
