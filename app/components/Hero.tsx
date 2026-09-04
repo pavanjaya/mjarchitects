@@ -57,7 +57,7 @@ export default function Hero() {
               className="font-serif italic"
               style={{
                 color: "#f5f3ef",
-                fontSize: "clamp(2.5rem, 6vw, 5.5rem)",
+                fontSize: "clamp(2.1rem, 5.04vw, 4.62rem)",
                 lineHeight: 1.02,
                 letterSpacing: "-0.01em",
                 fontWeight: 400,
