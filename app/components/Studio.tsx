@@ -9,7 +9,7 @@ const strong = (children: React.ReactNode) => (
 const team = [
   { name: "Dharam Jangid", role: "Civil Engineer" },
   { name: "Reshma Jangid", role: "Interior Design" },
-  { name: "Adv. Jaya Sharma", role: "Legal Consultant" },
+  { name: "Adv. Jaya Sharma", role: "Legal Consultant", image: "/team/jaya-sharma.jpg" },
 ];
 
 function initials(name: string) {
@@ -239,19 +239,28 @@ export default function Studio() {
               {team.map((member) => (
                 <div key={member.name}>
                   <div
-                    className="relative w-full aspect-square mb-6 flex items-center justify-center"
+                    className="relative w-full aspect-square mb-6 flex items-center justify-center overflow-hidden"
                     style={{ background: "var(--surface)" }}
                   >
-                    <span
-                      className="font-display"
-                      style={{
-                        color: "var(--muted)",
-                        fontSize: "clamp(2rem, 4vw, 2.75rem)",
-                        letterSpacing: "-0.01em",
-                      }}
-                    >
-                      {initials(member.name)}
-                    </span>
+                    {member.image ? (
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover"
+                      />
+                    ) : (
+                      <span
+                        className="font-display"
+                        style={{
+                          color: "var(--muted)",
+                          fontSize: "clamp(2rem, 4vw, 2.75rem)",
+                          letterSpacing: "-0.01em",
+                        }}
+                      >
+                        {initials(member.name)}
+                      </span>
+                    )}
                   </div>
                   <p
                     className="font-display"
