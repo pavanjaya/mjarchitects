@@ -20,7 +20,7 @@ export default function Footer() {
         <h2
           className="font-display uppercase mb-16 md:mb-24"
           style={{
-            color: "rgba(243, 232, 225, 0.6)",
+            color: "rgba(255, 255, 255, 0.2)",
             fontSize: "clamp(2.5rem, 7vw, 6rem)",
             letterSpacing: "-0.03em",
             lineHeight: 0.95,
