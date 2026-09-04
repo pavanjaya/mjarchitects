@@ -6,7 +6,12 @@ import PillCTA from "./PillCTA";
 import ProjectCard from "./ProjectCard";
 import { projects } from "../lib/projects";
 
-const categories = ["All", "Apartments", "Residential Bungalows", "Interiors"];
+const categories = [
+  { label: "All", value: "All" },
+  { label: "Apartments", value: "Apartments" },
+  { label: "Bungalows", value: "Residential Bungalows" },
+  { label: "Interiors", value: "Interiors" },
+];
 
 export default function Projects({ featured = false }: { featured?: boolean }) {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -44,20 +49,20 @@ export default function Projects({ featured = false }: { featured?: boolean }) {
               <div className="flex flex-wrap gap-6">
                 {categories.map((cat) => (
                   <button
-                    key={cat}
-                    onClick={() => setActiveCategory(cat)}
+                    key={cat.value}
+                    onClick={() => setActiveCategory(cat.value)}
                     className="text-[13px] uppercase font-display transition-colors duration-300"
                     style={{
                       color:
-                        activeCategory === cat ? "var(--foreground)" : "var(--muted)",
+                        activeCategory === cat.value ? "var(--foreground)" : "var(--muted)",
                       letterSpacing: "-0.01em",
                       borderBottom:
-                        activeCategory === cat
+                        activeCategory === cat.value
                           ? "1px solid var(--foreground)"
                           : "1px solid transparent",
                     }}
                   >
-                    {cat}
+                    {cat.label}
                   </button>
                 ))}
               </div>
