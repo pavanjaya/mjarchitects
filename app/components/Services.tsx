@@ -42,7 +42,7 @@ const services = [
   },
   {
     num: "05",
-    title: "Project Management & Site Supervision",
+    title: "Project Management",
     image: "/services/05-project-management.jpg",
     description:
       "On-site presence throughout construction to protect design intent, coordinate consultants, and keep quality, budget, and schedule aligned to the brief.",
