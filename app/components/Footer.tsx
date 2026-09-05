@@ -64,9 +64,9 @@ export default function Footer() {
             >
               MJ Architects
               <br />
-              1, Janaki, Architect Colony, Gangapur Road
+              704, 7th Floor, Aura Sky Tower, Near Kulkarni Garden
               <br />
-              Nashik, Maharashtra 422013
+              Sharanpur Road, Nashik, Maharashtra 422005
             </div>
           </div>
 
